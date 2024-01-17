@@ -58,10 +58,8 @@ const newsSlider = new Swiper('.news__swiper', {
             slidesPerView: 'auto',
         },
         798: {
-            slidesPerView: 3,
-        },
-        1022: {
-            slidesPerView: 4,
+            spaceBetween: 0,
+            slidesPerView: 'auto',
         },
         1230: {
             slidesPerView: 5,
@@ -80,12 +78,8 @@ const brandsSwiper = new Swiper('.brands__swiper', {
             slidesPerView: 'auto',
         },
         798: {
-            spaceBetween: 10,
-            slidesPerView: 2,
-        },
-        1022: {
-            spaceBetween: 18, 
-            slidesPerView: 3,
+            spaceBetween: 18,
+            slidesPerView: 'auto',
         },
         1230: {
             spaceBetween: 18, 
@@ -129,3 +123,53 @@ buttonsMinus.forEach((btn, index) => {
 })
 
 //End counters
+
+//Close cookies
+const closeCookiesBtn = document.querySelector('.cookies__button');
+const cookiesBlock = document.querySelector('.cookies');
+closeCookiesBtn.addEventListener('click', () => {
+    if (cookiesBlock.classList.contains('active')) {
+        cookiesBlock.classList.remove('active')
+    }
+})
+
+   //Start modal
+const calcScroll = () => {
+    let div = document.createElement('div');
+    div.style.width = '500px';
+    div.style.height = '500px';
+    div.style.overflowY = 'scroll';
+    div.style.visibility = 'hidden';
+    document.body.appendChild(div);
+    let scrollWidth = div.offsetWidth - div.clientWidth;
+    div.remove();
+    return scrollWidth;
+}
+const blockBody = () => {
+    const body = document.body;
+    body.style.overflowY = 'hidden';
+    body.style.touchAction = 'none';
+    const bodyScroll = calcScroll();
+    body.style.paddingRight = `${bodyScroll}px`;
+}
+const unBlockBody = () => {
+    const body = document.body;
+    body.style.overflowY = 'auto';
+    body.style.touchAction = 'auto';
+    body.style.paddingRight = `0`;
+}
+
+const modalLinks = document.querySelectorAll('[toggle]');
+modalLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const blockId = link.getAttribute('toggle');
+        document.querySelector(blockId).classList.toggle('active');
+        if (document.querySelector(blockId).classList.contains('active')) {
+            blockBody();
+        } else {
+            unBlockBody();
+        }
+    })
+})
+// End modals

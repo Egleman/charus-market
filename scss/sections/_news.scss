@@ -3,10 +3,15 @@
     &__title {
         margin-bottom: 30px;
     }
+    &__container {
+        display: grid;
+        grid-template-columns: minmax(15px, 1fr) minmax(200px, 1300px) minmax(15px, 1fr);
+    }
     &__slider {
         display: flex;
         align-items: center;
         gap: 15px;
+        grid-column: 2 / span 1;
         .slider {
             width: calc(100% - 94px);
         }
@@ -24,7 +29,7 @@
         flex-shrink: 0;
     }
     &__button.swiper-button-disabled {
-        background: rgba(3, 69, 118, .2);
+        background: rgba(3, 69, 118, .2) !important;
     }
     &__button.prev {
         svg {
@@ -52,6 +57,41 @@
         // }
     }
 }
+@media (max-width: 1230px) {
+    .news {
+        &__container {
+            grid-template-columns: minmax(15px, 1fr) minmax(200px, 992px) minmax(15px, 1fr);
+        }
+        &__button {
+            display: none;
+        }
+        &__slider {
+            grid-column: 2 / span 2;
+            .slider {
+                width: 100%;
+            }
+        }
+        &__swiper {
+            padding: 0;
+            .swiper-slide {
+                width: max-content !important;
+            }
+        }
+    }
+}
+@media (max-width: 1022px) {
+    .news {
+        &__container {
+            grid-template-columns: minmax(15px, 1fr) minmax(200px, 768px) minmax(15px, 1fr);
+        }
+        &__button {
+            display: none;
+        }
+        &__slider {
+            grid-column: 2 / span 2;
+        }
+    }
+}
 @media (max-width: 798px) {
     .news {
         &__button {
@@ -72,7 +112,7 @@
 }
 @media (max-width: 606px) {
     .news {
-        padding: 20px 0;
+        padding: 20px 0 40px 0;
         &__title {
             margin-bottom: 10px;
         }

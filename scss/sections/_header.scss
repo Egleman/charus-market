@@ -262,6 +262,13 @@
         }
         &__cart {
             display: none;
+            margin-bottom: 10px;
+            &_mobile {
+                display: flex;
+            }
+            &-text {
+                font-size: 16px;
+            }
         }
         &__menu {
             display: flex;

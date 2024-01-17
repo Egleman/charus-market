@@ -1,0 +1,81 @@
+.hover-light-blue-button {
+    transition: .3s all;
+}
+.hover-dark-blue-button {
+    transition: .3s all;
+}
+.hover-red-button {
+    transition: .3s all;
+}
+.hover-link {
+    transition: .3s all;
+    svg {
+        transition: .3s all;
+        path {
+            transition: .3s all;
+        }
+        rect {
+            transition: .3s all;
+        }
+    }
+}
+@media (hover: hover) {
+    .hover-light-blue-button {
+        &:hover {
+            background: #00ABE4;
+        }
+    }
+    .hover-dark-blue-button {
+        &:hover {
+            background: #0072C6;
+        }
+    }
+    .hover-red-button {
+        &:hover {
+            background: #EA3232;
+        }
+    }
+    .hover-link {
+        &:hover {
+            color: #0086B3;
+            svg {
+                path {
+                    fill: #0086B3;
+                }
+                rect {
+                    fill: #0086B3;
+                }
+            }
+        }
+    }
+}
+@media (hover: none) {
+    .hover-light-blue-button {
+        &:active {
+            background: #00ABE4;
+        }
+    } 
+    .hover-dark-blue-button {
+        &:active {
+            background: #0072C6;
+        }
+    }
+    .hover-red-button {
+        &:active {
+            background: #EA3232;
+        }
+    }
+    .hover-link {
+        &:active {
+            color: #0086B3;
+            svg {
+                path {
+                    fill: #0086B3;
+                }
+                rect {
+                    fill: #0086B3;
+                }
+            }
+        }
+    }
+}

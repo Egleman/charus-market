@@ -96,7 +96,7 @@
         }
     }
     &__button.swiper-button-disabled {
-        background: rgba(3, 69, 118, .2);
+        background: rgba(3, 69, 118, .2) !important;
     }
     #hero-pagination {
         position: absolute;
@@ -206,7 +206,7 @@
         }
     }
 }
-@media (max-width: 672px) {
+@media (max-width: 687px) {
     .hero {
         &__slide {
             &-title {

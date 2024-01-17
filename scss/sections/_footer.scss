@@ -55,6 +55,18 @@
         }
     }
 }
+@media (max-width: 606px) {
+    .footer {
+        &__list {
+            &-link {
+                font-size: 16px;
+            }
+            &_menu {
+                align-items: flex-start;
+            }
+        }
+    }
+}
 @media (max-width: 475px) {
     .footer {
         &__logo {

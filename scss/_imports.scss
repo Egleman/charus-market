@@ -1,6 +1,8 @@
 @import './components/container';
 @import './components/title';
 @import './components/product-card';
+@import './components/modal';
+
 
 @import './sections/header';
 @import './sections/hero';
@@ -9,3 +11,5 @@
 @import './sections/news';
 @import './sections/brands';
 @import './sections/footer';
+
+@import './components/hover';
