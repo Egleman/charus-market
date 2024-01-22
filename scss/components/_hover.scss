@@ -7,6 +7,9 @@
 .hover-red-button {
     transition: .3s all;
 }
+.hover-green-button {
+    transition: .3s all;
+}
 .hover-link {
     transition: .3s all;
     svg {
@@ -19,10 +22,19 @@
         }
     }
 }
+.drop-link {
+    transition: .3s all;
+    svg {
+        transition: .3s all;
+        path {
+            transition: .3s all;
+        }
+    }
+}
 @media (hover: hover) {
     .hover-light-blue-button {
         &:hover {
-            background: #00ABE4;
+            background: #15A3D2;
         }
     }
     .hover-dark-blue-button {
@@ -32,7 +44,12 @@
     }
     .hover-red-button {
         &:hover {
-            background: #EA3232;
+            background: #CB3F3F;
+        }
+    }
+    .hover-green-button {
+        &:hover {
+            background: #34E47E;
         }
     }
     .hover-link {
@@ -48,11 +65,22 @@
             }
         }
     }
+    .drop-link {
+        &:hover {
+            color: #0086B3;
+            svg {
+                path {
+                    stroke: #0086B3;
+                }
+                
+            }
+        }
+    }
 }
 @media (hover: none) {
     .hover-light-blue-button {
         &:active {
-            background: #00ABE4;
+            background: #0179A1;
         }
     } 
     .hover-dark-blue-button {
@@ -62,7 +90,12 @@
     }
     .hover-red-button {
         &:active {
-            background: #EA3232;
+            background: #A42A2A;
+        }
+    }
+    .hover-green-button {
+        &:active {
+            background: #1EC062;
         }
     }
     .hover-link {
@@ -75,6 +108,17 @@
                 rect {
                     fill: #0086B3;
                 }
+            }
+        }
+    }
+    .drop-link {
+        &:active {
+            color: #0086B3;
+            svg {
+                path {
+                    stroke: #0086B3;
+                }
+                
             }
         }
     }
