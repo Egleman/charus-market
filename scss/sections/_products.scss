@@ -1,0 +1,27 @@
+.products {
+    &__top {
+        display: flex;
+        align-items: flex-end;
+        gap: 5px;
+        margin-bottom: 20px;
+        &-counter {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            color: rgba(18, 18, 18, 0.25);
+            padding-bottom: 4px;
+        }
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: 300px 1fr 210px;
+        gap: 30px;
+        &-colname {
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+        }
+    }
+}

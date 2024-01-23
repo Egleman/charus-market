@@ -1,0 +1,82 @@
+.filter {
+    &__accordion {
+        &-item {
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+            &:last-of-type {
+                margin-bottom: 20px;
+            }
+        }
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-radius: 4px;
+            background: #EFF2F6;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        &-title {
+            display: flex;
+            align-items: flex-end;
+            gap: 5px;
+            .text {
+                font-size: 16px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+            .count {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                color: rgba(18, 18, 18, .25);
+            }
+        }
+        &-icon {
+            display: flex;
+            flex-shrink: 0;
+            transition: .3s all;
+        }
+        &-content {
+            padding-top: 10px;
+            padding-left: 30px;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        &-wrap {
+            label {
+                .text {
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    max-width: 269px;
+                    span {
+                        font-size: 14px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: normal;
+                        color: rgba(18, 18, 18, .25);
+                    }
+                }
+            }
+            input {
+                display: none;
+                &:checked + label {
+                    .text {
+                        color: #0086B3;
+                        span {
+                            color: rgba(18, 18, 18, .25);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -31,6 +31,12 @@
         }
     }
 }
+.catalog-link-tab {
+    transition: .3s all;
+}
+.catalog-link {
+    transition: .3s all;
+}
 @media (hover: hover) {
     .hover-light-blue-button {
         &:hover {
@@ -74,6 +80,16 @@
                 }
                 
             }
+        }
+    }
+    .catalog-link-tab {
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .catalog-link {
+        &:hover {
+            color: #0086B3;
         }
     }
 }
@@ -120,6 +136,16 @@
                 }
                 
             }
+        }
+    }
+    .catalog-link-tab {
+        &:active {
+            opacity: 1;
+        }
+    }
+    .catalog-link {
+        &:active {
+            color: #0086B3;
         }
     }
 }

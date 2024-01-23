@@ -1,5 +1,4 @@
 //Start sliders
-
 const heroSlider = new Swiper('.hero__swiper', {
     pagination: {
         el: '#hero-pagination',
@@ -13,7 +12,6 @@ const heroSlider = new Swiper('.hero__swiper', {
         prevEl: '.hero__button.prev',
     },
 });
-
 const categorySlider = new Swiper('.category__swiper', {
     spaceBetween: 18,
     grid: {
@@ -44,7 +42,6 @@ const categorySlider = new Swiper('.category__swiper', {
         }
     }
 });
-
 const newsSlider = new Swiper('.news__swiper', {
     spaceBetween: 0,
     slidesPerView: 5,
@@ -66,7 +63,6 @@ const newsSlider = new Swiper('.news__swiper', {
         },
     }
 });
-
 const brandsSwiper = new Swiper('.brands__swiper', {
     navigation: {
         nextEl: '.brands__button.next',
@@ -87,23 +83,9 @@ const brandsSwiper = new Swiper('.brands__swiper', {
         },
     }
 });
-
-const catalogSwiper = new Swiper('.catalog-swiper', {
-    direction: "vertical",
-      slidesPerView: "auto",
-      freeMode: true,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        dragSize: 202,
-        draggable: true
-      },
-      mousewheel: true,
-})
-
 //End sliders
 
 //Start Card products
-
 const cardProductsBtn = document.querySelectorAll('[data-button="card-product"]');
 const cardProductsCounters = document.querySelectorAll('.product-card__counter');
 cardProductsBtn.forEach((btn, index) => {
@@ -112,11 +94,9 @@ cardProductsBtn.forEach((btn, index) => {
         cardProductsCounters[index].classList.add('active');
     })
 })
-
 //End Card products
 
 //Start counters
-
 const buttonsPlus =  document.querySelectorAll('[data-button="plus"]');
 const buttonsMinus =  document.querySelectorAll('[data-button="minus"]');
 const countDisplays =  document.querySelectorAll('[data-block="count"]');
@@ -133,7 +113,6 @@ buttonsMinus.forEach((btn, index) => {
         }
     })
 })
-
 //End counters
 
 //Close cookies
@@ -145,7 +124,7 @@ closeCookiesBtn.addEventListener('click', () => {
     }
 })
 
-   //Start modal
+//Start modal
 const calcScroll = () => {
     let div = document.createElement('div');
     div.style.width = '500px';
@@ -187,7 +166,6 @@ modalLinks.forEach(link => {
 // End modals
 
 // Start accordions
-
 class Accordion {
     constructor(target, config) {
         this._el = typeof target === 'string' ? document.querySelector(target) : target;
@@ -265,6 +243,153 @@ accordions.forEach(accordion => {
         alwaysOpen: false
     });
 })
-
-
 // End accordions
+
+// Start custom scrolss
+const catalogBlocks = document.querySelectorAll('#scroll');
+catalogBlocks.forEach(block => {
+    new MiniBar(block, {
+        hideBars: false,
+        mutationObserver: {
+            attributes: true,
+            childList: true,
+            subtree: true
+        },
+    });
+})
+// End custom scrols
+
+//Start tabs
+const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector, func = null) => {
+    tabsPanel.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest(`.${tabSelector}`)) {
+            const btn = e.target.closest(`.${tabSelector}`);
+            tabsButtons.forEach((tab, index) => {
+                if (tab === btn) {
+                    tab.classList.add('active');
+                    tabsContent[index].classList.add('active');
+                } else {
+                    if (tab.classList.contains('active')) {
+                        tab.classList.remove('active');
+                    }
+                    if (tabsContent[index].classList.contains('active')) {
+                        tabsContent[index].classList.remove('active');
+                    }
+                    if (func !== null) {
+                        func()
+                    }
+                }
+            })
+        }
+    })
+}
+
+// tabs(catalogTabPanel, catalogTabButtons, catalogTabContents, 'catalog__tabs-link');
+//End tabs
+
+// Start catalog
+const catalogButton = document.querySelector('.header__ctg-btn');
+const catalog = document.querySelector('.catalog');
+const backButtonsCatalog = document.querySelectorAll('[data-button="back-catalog"]');
+const closeButtonsCatalog = document.querySelectorAll('[data-button="close-catalog"]');
+
+const catalogTabPanel = document.querySelector('.catalog__tabs');
+const catalogTabButtons = document.querySelectorAll('.catalog__tabs-link');
+const catalogTabContents = document.querySelectorAll('.catalog__content');
+
+catalogButton.addEventListener('click', () => {
+    catalogButton.classList.toggle('active');
+    catalog.classList.toggle('active');
+})
+
+catalogTabPanel.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.closest(`.catalog__tabs-link`)) {
+        const btn = e.target.closest(`.catalog__tabs-link`);
+        catalogTabButtons.forEach((tab, index) => {
+            if (tab === btn) {
+                tab.classList.add('active');
+                if (window.innerWidth <= 606) {
+                    catalogTabContents[index].classList.add('mobile-active');
+                }
+                catalogTabContents[index].classList.add('active');
+            } else {
+                if (tab.classList.contains('active')) {
+                    tab.classList.remove('active');
+                }
+                if (window.innerWidth <= 606) {
+                    if (catalogTabContents[index].classList.contains('mobile-active')) {
+                        catalogTabContents[index].classList.remove('mobile-active');
+                    }
+                }
+                if (catalogTabContents[index].classList.contains('active')) {
+                    catalogTabContents[index].classList.remove('active');
+                }
+            }
+        })
+    }
+})
+
+backButtonsCatalog.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        if (window.innerWidth <= 606) {
+            if (catalogTabContents[index].classList.contains('mobile-active')) {
+                catalogTabContents[index].classList.remove('mobile-active');
+            }
+        }
+    })
+})
+closeButtonsCatalog.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        catalogTabContents.forEach((content, i) => {
+            if (content.classList.contains('mobile-active')) {
+                content.classList.remove('mobile-active');
+            }
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+            }
+            if (catalogTabButtons[i].classList.contains('active')) {
+                catalogTabButtons[i].classList.remove('active')
+            }
+        })
+        catalogTabContents[0].classList.add('active');
+        catalogTabButtons[0].classList.add('active');
+        if (catalogButton.classList.contains('active')) {
+            catalogButton.classList.remove('active');
+        }
+        if (catalog.classList.contains('active')) {
+            catalog.classList.remove('active');
+        }
+    })
+})
+// End catalog
+
+//Start custom-select
+const customSelects = document.querySelectorAll('.select > .select__value');
+const customSelectsOptions = document.querySelectorAll('.select__list');
+customSelects.forEach(select => {
+    select.addEventListener('click', () => {
+        select.parentNode.classList.toggle('active');
+    })
+})
+customSelectsOptions.forEach((panel, index) => {
+    panel.addEventListener('click', (e) => {
+        if (e.target.closest('label')) {
+            customSelects[index].querySelector('.value').textContent = e.target.closest('label').textContent;
+            if (customSelects[index].parentNode.classList.contains('active')) {
+                customSelects[index].parentNode.classList.remove('active')
+            }
+        }
+    })
+})
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.select')) {
+        customSelects.forEach(select => {
+            if (select.parentNode.classList.contains('active')) {
+                select.parentNode.classList.remove('active')
+            }
+        })
+    }
+})
+//End custom-select

@@ -130,6 +130,23 @@
             line-height: normal;
             color: #fff;
         }
+        &-icon {
+            &_first {
+                display: flex;
+            }
+            &_second {
+                display: none;
+            }
+        }
+    }
+    &__ctg-btn.active {
+        border-radius: 10px 10px 0 0;
+        .header__ctg-btn-icon_second {
+            display: flex;
+        }
+        .header__ctg-btn-icon_first {
+            display: none;
+        }
     }
     &__list {
         display: flex;

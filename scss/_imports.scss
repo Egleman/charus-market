@@ -3,7 +3,9 @@
 @import './components/product-card';
 @import './components/modal';
 @import './components/accordion';
-@import './components/catalog';
+@import './components/breadcrumbs';
+@import './components/select';
+@import './components/filter';
 
 
 @import './sections/header';
@@ -14,4 +16,7 @@
 @import './sections/brands';
 @import './sections/footer';
 
+@import './sections/products';
+
 @import './components/hover';
+@import './components/catalog';
