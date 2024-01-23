@@ -31,6 +31,9 @@
         }
     }
 }
+.catalog-link-tab {
+    transition: .3s all;
+}
 .catalog-link {
     transition: .3s all;
 }
@@ -79,9 +82,14 @@
             }
         }
     }
-    .catalog-link {
+    .catalog-link-tab {
         &:hover {
             opacity: 1;
+        }
+    }
+    .catalog-link {
+        &:hover {
+            color: #0086B3;
         }
     }
 }
@@ -130,9 +138,14 @@
             }
         }
     }
-    .catalog-link {
+    .catalog-link-tab {
         &:active {
             opacity: 1;
+        }
+    }
+    .catalog-link {
+        &:active {
+            color: #0086B3;
         }
     }
 }

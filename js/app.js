@@ -266,75 +266,126 @@ accordions.forEach(accordion => {
     });
 })
 // End accordions
-new MiniBar('#scroll', {
-    hideBars: false,
-    mutationObserver: {
-        attributes: true,
-        childList: true,
-        subtree: true
-    },
-    // onScroll: function() {
-    //     console.log(this)
-    //     if (this.lastY > 1) {
-    //         document.querySelector('.catalog__content > .mb-track-y').style.opacity = 1;
-    //     } else if (this.lastY <= 1) {
-    //         document.querySelector('.catalog__content > .mb-track-y').style.opacity = 0;
-    //     }
-    // },
-});
-// new MiniBar('#scroll', {
-//     barType: "default",
-//     minBarSize: 5,
-//     hideBars: false,  /* v0.4.0 and above */
-//     alwaysShowBars: false,
-//     horizontalMouseScroll: false,
 
-//     scrollX: false,
-//     scrollY: true,
+// Start custom scrolss
+const catalogBlocks = document.querySelectorAll('#scroll');
+catalogBlocks.forEach(block => {
+    new MiniBar(block, {
+        hideBars: false,
+        mutationObserver: {
+            attributes: true,
+            childList: true,
+            subtree: true
+        },
+    });
+})
+// End custom scrols
 
-//     navButtons: false,
-//     scrollAmount: 10,
+//Start tabs
 
-//     mutationObserver: {
-//         attributes: false,
-//         childList: true,
-//         subtree: true
-//     },
+const tabs = (tabsPanel, tabsButtons, tabsContent, tabSelector, func = null) => {
+    tabsPanel.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (e.target.closest(`.${tabSelector}`)) {
+            const btn = e.target.closest(`.${tabSelector}`);
+            tabsButtons.forEach((tab, index) => {
+                if (tab === btn) {
+                    tab.classList.add('active');
+                    tabsContent[index].classList.add('active');
+                } else {
+                    if (tab.classList.contains('active')) {
+                        tab.classList.remove('active');
+                    }
+                    if (tabsContent[index].classList.contains('active')) {
+                        tabsContent[index].classList.remove('active');
+                    }
+                    if (func !== null) {
+                        func()
+                    }
+                }
+            })
+        }
+    })
+}
 
-//      /* v0.4.0 and above */
-//     onInit: function() {
-//     /* do something on init */
-//     },
+// tabs(catalogTabPanel, catalogTabButtons, catalogTabContents, 'catalog__tabs-link');
 
-//      /* v0.4.0 and above */
-//     onUpdate: function() {
-//     /* do something on update */
-//     },
+//End tabs
 
-//      /* v0.4.0 and above */
-    // onScroll: function() {
-    // /* do something on init */
-    // },
+// Start catalog
 
-//     classes: {
-//         container: "mb-container",
-//         content: "mb-content",
-//         track: "mb-track",
-//         bar: "mb-bar",
-//         visible: "mb-visible",
-//         progress: "mb-progress",
-//         hover: "mb-hover",
-//         scrolling: "mb-scrolling",
-//         textarea: "mb-textarea",
-//         wrapper: "mb-wrapper",
-//         nav: "mb-nav",
-//         btn: "mb-button",
-//         btns: "mb-buttons",
-//         increase: "mb-increase",
-//         decrease: "mb-decrease",
-//         item: "mb-item", /* v0.4.0 and above */
-//         itemVisible: "mb-item-visible", /* v0.4.0 and above */
-//         itemPartial: "mb-item-partial", /* v0.4.0 and above */
-//         itemHidden: "mb-item-hidden" /* v0.4.0 and above */
-//     }
-// });
+const catalogButton = document.querySelector('.header__ctg-btn');
+const catalog = document.querySelector('.catalog');
+const backButtonsCatalog = document.querySelectorAll('[data-button="back-catalog"]');
+const closeButtonsCatalog = document.querySelectorAll('[data-button="close-catalog"]');
+
+const catalogTabPanel = document.querySelector('.catalog__tabs');
+const catalogTabButtons = document.querySelectorAll('.catalog__tabs-link');
+const catalogTabContents = document.querySelectorAll('.catalog__content');
+
+catalogButton.addEventListener('click', () => {
+    catalogButton.classList.toggle('active');
+    catalog.classList.toggle('active');
+})
+
+catalogTabPanel.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.closest(`.catalog__tabs-link`)) {
+        const btn = e.target.closest(`.catalog__tabs-link`);
+        catalogTabButtons.forEach((tab, index) => {
+            if (tab === btn) {
+                tab.classList.add('active');
+                if (window.innerWidth <= 606) {
+                    catalogTabContents[index].classList.add('mobile-active');
+                }
+                catalogTabContents[index].classList.add('active');
+            } else {
+                if (tab.classList.contains('active')) {
+                    tab.classList.remove('active');
+                }
+                if (window.innerWidth <= 606) {
+                    if (catalogTabContents[index].classList.contains('mobile-active')) {
+                        catalogTabContents[index].classList.remove('mobile-active');
+                    }
+                }
+                if (catalogTabContents[index].classList.contains('active')) {
+                    catalogTabContents[index].classList.remove('active');
+                }
+            }
+        })
+    }
+})
+
+backButtonsCatalog.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        if (window.innerWidth <= 606) {
+            if (catalogTabContents[index].classList.contains('mobile-active')) {
+                catalogTabContents[index].classList.remove('mobile-active');
+            }
+        }
+    })
+})
+closeButtonsCatalog.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+        catalogTabContents.forEach((content, i) => {
+            if (content.classList.contains('mobile-active')) {
+                content.classList.remove('mobile-active');
+            }
+            if (content.classList.contains('active')) {
+                content.classList.remove('active');
+            }
+            if (catalogTabButtons[i].classList.contains('active')) {
+                catalogTabButtons[i].classList.remove('active')
+            }
+        })
+        catalogTabContents[0].classList.add('active');
+        catalogTabButtons[0].classList.add('active');
+        if (catalogButton.classList.contains('active')) {
+            catalogButton.classList.remove('active');
+        }
+        if (catalog.classList.contains('active')) {
+            catalog.classList.remove('active');
+        }
+    })
+})
+// End catalog
