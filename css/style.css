@@ -634,6 +634,26 @@ b {
   width: 100%;
   border-radius: 0 10px 10px 0;
 }
+.catalog__content .mb-track-x {
+  display: none;
+}
+.catalog__content .mb-content {
+  margin-right: -15px;
+  padding-right: 15px;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.catalog__content .mb-content::-webkit-scrollbar {
+  display: none;
+}
+.catalog__content .mb-track-y {
+  width: 5px;
+  height: calc(100% - 30px);
+  top: 15px;
+}
+.catalog__content .mb-track-y .mb-bar {
+  background-color: #0086B3;
+}
 .catalog .catalog-swiper {
   height: 608px;
 }
@@ -687,6 +707,14 @@ b {
           align-items: center;
   gap: 5px;
 }
+.catalog__accordion-header svg {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+.catalog__accordion-header svg rect {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
 .catalog__accordion-title {
   font-size: 16px;
   font-style: normal;
@@ -696,6 +724,19 @@ b {
 .catalog__accordion-content {
   padding-top: 10px;
   padding-left: 50px;
+}
+.catalog__accordion-item:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+.catalog__accordion-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px;
 }
 .catalog__accordion-link {
   font-size: 16px;
@@ -708,6 +749,18 @@ b {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 37px;
+  height: 32px;
+  margin-bottom: 10px;
+}
+.catalog .accordion__item_show .catalog__accordion-header svg rect:first-of-type, .catalog .accordion__item_slidedown .catalog__accordion-header svg rect:first-of-type {
+  opacity: 0;
 }
 
 .header {
@@ -2198,6 +2251,11 @@ b {
   transition: 0.3s all;
 }
 
+.catalog-link {
+  -webkit-transition: 0.3s all;
+  transition: 0.3s all;
+}
+
 @media (hover: hover) {
   .hover-light-blue-button:hover {
     background: #15A3D2;
@@ -2225,6 +2283,9 @@ b {
   }
   .drop-link:hover svg path {
     stroke: #0086B3;
+  }
+  .catalog-link:hover {
+    opacity: 1;
   }
 }
 @media (hover: none) {
@@ -2254,5 +2315,8 @@ b {
   }
   .drop-link:active svg path {
     stroke: #0086B3;
+  }
+  .catalog-link:active {
+    opacity: 1;
   }
 }/*# sourceMappingURL=style.css.map */

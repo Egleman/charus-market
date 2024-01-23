@@ -88,17 +88,17 @@ const brandsSwiper = new Swiper('.brands__swiper', {
     }
 });
 
-const catalogSwiper = new Swiper('.catalog-swiper', {
-    direction: "vertical",
-      slidesPerView: "auto",
-      freeMode: true,
-      scrollbar: {
-        el: ".swiper-scrollbar",
-        dragSize: 202,
-        draggable: true
-      },
-      mousewheel: true,
-})
+// const catalogSwiper = new Swiper('.catalog-swiper', {
+//     direction: "vertical",
+//       slidesPerView: "auto",
+//       freeMode: true,
+//       scrollbar: {
+//         el: ".swiper-scrollbar",
+//         dragSize: 202,
+//         draggable: true
+//       },
+//       mousewheel: true,
+// })
 
 //End sliders
 
@@ -265,6 +265,76 @@ accordions.forEach(accordion => {
         alwaysOpen: false
     });
 })
-
-
 // End accordions
+new MiniBar('#scroll', {
+    hideBars: false,
+    mutationObserver: {
+        attributes: true,
+        childList: true,
+        subtree: true
+    },
+    // onScroll: function() {
+    //     console.log(this)
+    //     if (this.lastY > 1) {
+    //         document.querySelector('.catalog__content > .mb-track-y').style.opacity = 1;
+    //     } else if (this.lastY <= 1) {
+    //         document.querySelector('.catalog__content > .mb-track-y').style.opacity = 0;
+    //     }
+    // },
+});
+// new MiniBar('#scroll', {
+//     barType: "default",
+//     minBarSize: 5,
+//     hideBars: false,  /* v0.4.0 and above */
+//     alwaysShowBars: false,
+//     horizontalMouseScroll: false,
+
+//     scrollX: false,
+//     scrollY: true,
+
+//     navButtons: false,
+//     scrollAmount: 10,
+
+//     mutationObserver: {
+//         attributes: false,
+//         childList: true,
+//         subtree: true
+//     },
+
+//      /* v0.4.0 and above */
+//     onInit: function() {
+//     /* do something on init */
+//     },
+
+//      /* v0.4.0 and above */
+//     onUpdate: function() {
+//     /* do something on update */
+//     },
+
+//      /* v0.4.0 and above */
+    // onScroll: function() {
+    // /* do something on init */
+    // },
+
+//     classes: {
+//         container: "mb-container",
+//         content: "mb-content",
+//         track: "mb-track",
+//         bar: "mb-bar",
+//         visible: "mb-visible",
+//         progress: "mb-progress",
+//         hover: "mb-hover",
+//         scrolling: "mb-scrolling",
+//         textarea: "mb-textarea",
+//         wrapper: "mb-wrapper",
+//         nav: "mb-nav",
+//         btn: "mb-button",
+//         btns: "mb-buttons",
+//         increase: "mb-increase",
+//         decrease: "mb-decrease",
+//         item: "mb-item", /* v0.4.0 and above */
+//         itemVisible: "mb-item-visible", /* v0.4.0 and above */
+//         itemPartial: "mb-item-partial", /* v0.4.0 and above */
+//         itemHidden: "mb-item-hidden" /* v0.4.0 and above */
+//     }
+// });
