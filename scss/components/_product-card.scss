@@ -4,9 +4,12 @@
     border-radius: 10px;
     border: 1px solid transparent;
     transition: .3s all;
+    position: relative;
+    z-index: 0;
     &:hover {
         border: 1px solid rgba(18, 18, 18, 0.10);
         box-shadow: 0px 10px 20px 0px rgba(18, 18, 18, 0.20);
+        z-index: 1;
     }
     &__image {
         max-width: 215px;
@@ -32,6 +35,9 @@
         font-weight: 500;
         line-height: normal;
         color: #fff;
+        &_red {
+            background: #D82828;
+        }
     }
     &__price {
         display: flex;
@@ -92,6 +98,7 @@
         text-transform: uppercase;
         color: #fff;
         font-family: 'Brutal Type', sans-serif;
+        // min-width: 80px;
         &_green {
             background: #2DCB6F;
             p {
@@ -112,6 +119,8 @@
         display: none;
         align-items: center;
         gap: 10px;
+        container: box / size;
+        height: 32px;
         .counter {
             display: flex;
             align-items: center;
@@ -147,6 +156,22 @@
         display: flex;
     }
 }
+@container box (width < 190px) {
+    // .product-card__button {
+    //     min-width: initial;
+    // }
+    .product-card__button_green {
+        // width: 32px;
+        height: 32px;
+        margin-left: auto;
+        svg {
+            display: flex;
+        }
+        p {
+            display: none;
+        }
+    }
+}
 @media (max-width: 1230px) {
     .product-card {
         &:hover {
@@ -162,13 +187,13 @@
         border-radius: 10px;
         // border: none;
         transition: .3s all;
-        max-width: 150px;
+        max-width: 200px;
         width: 100%;
         &__label {
             top: -30px;
         }
         &__image {
-            max-width: 150px;
+            max-width: 200px;
             height: 140px;
         }
         &__price {
@@ -183,15 +208,45 @@
             overflow: hidden;
         }
         &__button {
+            // min-width: 32px;
             &_green {
-                width: 32px;
+                // width: 32px;
                 height: 32px;
+                margin-left: 0;
                 svg {
                     display: flex;
                 }
                 p {
                     display: none;
                 }
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    .product-card {
+        max-width: 150px;
+        &__image {
+            max-width: 150px;
+            height: 140px;
+        }
+        &__button {
+            // min-width: 32px;
+            &_green {
+                width: 32px;
+                height: 32px;
+                margin-left: 0;
+                svg {
+                    display: flex;
+                }
+                p {
+                    display: none;
+                }
+            }
+        }
+        &__counter {
+            .counter {
+                width: 90px;
             }
         }
     }

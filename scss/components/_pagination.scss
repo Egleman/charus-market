@@ -1,0 +1,86 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #034576;
+    }
+    &__button.disabled {
+        background: rgba(3, 69, 118, .2);
+    }
+    &__button.prev {
+        svg {
+            display: flex;
+            flex-shrink: 0;
+            padding-right: 3px;
+        }
+    }
+    &__button.next {
+        svg {
+            display: flex;
+            flex-shrink: 0;
+            padding-left: 3px;
+        }
+    }
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            padding-bottom: 3px;
+            box-sizing: border-box;
+            transition: .3s all;
+            &:hover {
+                background: #0086B3;
+                color: #fff; 
+            }
+        }
+        &-link.active {
+            background: #0086B3;
+            color: #fff;
+        }
+        &-dots {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+    }
+}
+@media (max-width: 475px) {
+    .pagination {
+        &__list {
+            &-item.hidden\@s {
+                display: none;
+            }
+        }
+    }
+}

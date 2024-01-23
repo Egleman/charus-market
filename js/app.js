@@ -83,6 +83,32 @@ const brandsSwiper = new Swiper('.brands__swiper', {
         },
     }
 });
+const productsSlider = new Swiper('.filter-swiper', {
+    spaceBetween: 10,
+    slidesPerView: 'auto',
+    freeMode: true
+})
+const productsCategories = new Swiper('.swiper-categories', {
+    freeMode: true,
+    breakpoints: {
+        0: {
+            spaceBetween: 10,
+            slidesPerView: 'auto',
+        },
+        798: {
+            spaceBetween: 10,
+            slidesPerView: 4,
+        },
+        1022: {
+            spaceBetween: 10,
+            slidesPerView: 5,
+        },
+        1230: {
+            spaceBetween: 10,
+            slidesPerView: 6,
+        },
+    }
+})
 //End sliders
 
 //Start Card products
@@ -370,6 +396,11 @@ const customSelects = document.querySelectorAll('.select > .select__value');
 const customSelectsOptions = document.querySelectorAll('.select__list');
 customSelects.forEach(select => {
     select.addEventListener('click', () => {
+        document.querySelectorAll('.select').forEach(block => {
+            if (block.classList.contains('active')) {
+                block.classList.remove('active')
+            }
+        })
         select.parentNode.classList.toggle('active');
     })
 })
@@ -393,3 +424,84 @@ document.addEventListener('click', (e) => {
     }
 })
 //End custom-select
+
+//Start range-sliders
+const rangeSliderFilters = document.querySelectorAll('#filter-range');
+const rangeInputsFrom = document.querySelectorAll('[data-input="from"]');
+const rangeInputsUpTo = document.querySelectorAll('[data-input="up-to"]');
+rangeSliderFilters.forEach((slider, index) => {
+    const rangeSliderOptions = {
+        start: [+slider.dataset.start, +slider.dataset.end],
+        connect: true,
+        range: {
+            'min': [+slider.dataset.min],
+            'max': [+slider.dataset.max]
+        }
+    }
+    const snapValues = [
+        rangeInputsFrom[index],
+        rangeInputsUpTo[index]
+    ];
+    noUiSlider.create(slider, rangeSliderOptions);
+    slider.noUiSlider.on('update', function (values, handle) {
+        let summ = String(Math.round(values[handle]));
+        summ = summ.replace(/[^\d.]/g, '');
+        summ = summ.replace(
+            /(\d)(?=(\d{3})+([^\d]|$))/g,
+            '$1 ',
+        );
+        snapValues[handle].value = summ;
+    });
+    slider.noUiSlider.on('set', function (values, handle) {
+        let summ = String(Math.round(values[handle]));
+        summ = summ.replace(/[^\d.]/g, '');
+        summ = summ.replace(
+            /(\d)(?=(\d{3})+([^\d]|$))/g,
+            '$1 ',
+        );
+        snapValues[handle].value = summ;
+    });
+    rangeInputsFrom[index].addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, '');
+        e.target.value = e.target.value.replace(
+            /(\d)(?=(\d{3})+([^\d]|$))/g,
+            '$1 ',
+        );
+    })
+    rangeInputsUpTo[index].addEventListener('input', (e) => {
+        e.target.value = e.target.value.replace(/[^\d.]/g, '');
+        e.target.value = e.target.value.replace(
+            /(\d)(?=(\d{3})+([^\d]|$))/g,
+            '$1 ',
+        );
+    })
+    rangeInputsFrom[index].addEventListener('change', () => {
+        if (+rangeInputsFrom[index].value.replace(/\D/g,'') > 0 && +rangeInputsFrom[index].value.replace(/\D/g,'') < +slider.dataset.max) {
+            slider.noUiSlider.set(+rangeInputsFrom[index].value.replace(/\D/g,''));
+        } else {
+            slider.noUiSlider.set(+slider.dataset.max);
+        }
+    })
+    rangeInputsUpTo[index].addEventListener('change', () => {
+        if (+rangeInputsUpTo[index].value.replace(/\D/g,'') > 0 && +rangeInputsUpTo[index].value.replace(/\D/g,'') < +slider.dataset.max) {
+            slider.noUiSlider.set(+rangeInputsUpTo[index].value.replace(/\D/g,''));
+        } else {
+            slider.noUiSlider.set(+slider.dataset.max);
+        }
+    })
+})
+//End range-slider
+
+//Start filters
+const filterOpenBtn = document.querySelector('.filter-button');
+const filterBlock = document.querySelector('.filter');
+const filterCloseBtn = document.querySelector('[data-button="close-filter"]');
+filterOpenBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterBlock.classList.toggle('active');
+})
+filterCloseBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    filterBlock.classList.toggle('active');
+})
+//End filters
