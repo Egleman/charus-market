@@ -47,7 +47,7 @@
             font-weight: 500;
             line-height: normal;
             text-transform: uppercase;
-            padding-bottom: 3px;
+            padding-top: 3px;
             box-sizing: border-box;
             transition: .3s all;
             &:hover {
@@ -79,6 +79,15 @@
     .pagination {
         &__list {
             &-item.hidden\@s {
+                display: none;
+            }
+        }
+    }
+}
+@media (max-width: 335px) {
+    .pagination {
+        &__list {
+            &-item.hidden\@xs {
                 display: none;
             }
         }

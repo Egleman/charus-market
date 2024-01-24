@@ -1,0 +1,96 @@
+.search-result {
+    padding-top: 60px;
+    &__title {
+        margin-bottom: 30px;
+    }
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 20px;
+    }
+    &__card {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        &-img {
+            max-width: 100px;
+            width: 100%;
+            height: 93px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 10px;
+            padding: 2.5px 0;
+            box-sizing: border-box;
+        }
+        &-price {
+            display: flex;
+            gap: 10px;
+            .new {
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+            .old {
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                color: rgba(18, 18, 18, .25);
+                text-decoration: line-through;
+            }
+        }
+        &-description {
+            -webkit-line-clamp: 2; /* Число отображаемых строк */
+            display: -webkit-box; /* Включаем флексбоксы */
+            -webkit-box-orient: vertical; /* Вертикальная ориентация */
+            overflow: hidden;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        &-article {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            color: rgba(18, 18, 18, .25);
+        }
+    }
+}
+@media (max-width: 1230px) {
+    .search-result {
+        &__title {
+            margin-bottom: 20px;
+        }
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+    }
+}
+@media (max-width: 606px) {
+    .search-result {
+        &__grid {
+            grid-template-columns: 1fr;
+        }
+        &__card {
+            &-description {
+                -webkit-line-clamp: 3; /* Число отображаемых строк */
+                display: -webkit-box; /* Включаем флексбоксы */
+                -webkit-box-orient: vertical; /* Вертикальная ориентация */
+                overflow: hidden;
+            }
+        }
+    }
+}
