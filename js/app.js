@@ -496,12 +496,71 @@ rangeSliderFilters.forEach((slider, index) => {
 const filterOpenBtn = document.querySelector('.filter-button');
 const filterBlock = document.querySelector('.filter');
 const filterCloseBtn = document.querySelector('[data-button="close-filter"]');
-filterOpenBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    filterBlock.classList.toggle('active');
-})
-filterCloseBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    filterBlock.classList.toggle('active');
-})
+if (filterOpenBtn) {
+    filterOpenBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterBlock.classList.toggle('active');
+    })
+}
+if (filterCloseBtn) {
+    filterCloseBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        filterBlock.classList.toggle('active');
+    })
+}
+
 //End filters
+
+//Start search header
+const mobileSearchModal = document.querySelector('.search');
+const mobileSearchButtonHeader = document.querySelector('.header__search');
+const closeModalSearchButton = document.querySelector('[data-button="close-search"]');
+
+const searchHeaderInput = document.querySelector('.header__form-input');
+const searchHeaderBlock = document.querySelector('.header__form-search');
+
+const searchModalInput = document.querySelector('.search__form-input');
+const searchModalResetInputButton = document.querySelector('.search__form-reset');
+const searchModalResultBlock = document.querySelector('.search__result');
+
+mobileSearchButtonHeader.addEventListener('click', (e) => {
+    e.preventDefault();
+    mobileSearchModal.classList.toggle('active');
+})
+closeModalSearchButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    mobileSearchModal.classList.toggle('active');
+})
+searchHeaderInput.addEventListener('input', (e) => {
+    if (e.target.value.length !== 0) {
+        searchHeaderBlock.classList.add('active');
+    } else {
+        if (searchHeaderBlock.classList.contains('active')) {
+            searchHeaderBlock.classList.remove('active');
+        }
+    }
+})
+searchModalResetInputButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    searchModalInput.value = '';
+    if (searchModalResetInputButton.classList.contains('active')) {
+        searchModalResetInputButton.classList.remove('active');
+    }
+    if (searchModalResultBlock.classList.contains('active')) {
+        searchModalResultBlock.classList.remove('active');
+    }
+})
+searchModalInput.addEventListener('input', (e) => {
+    if (e.target.value.length !== 0) {
+        searchModalResetInputButton.classList.add('active');
+        searchModalResultBlock.classList.add('active');
+    } else {
+        if (searchModalResetInputButton.classList.contains('active')) {
+            searchModalResetInputButton.classList.remove('active');
+        }
+        if (searchModalResultBlock.classList.contains('active')) {
+            searchModalResultBlock.classList.remove('active');
+        }
+    }
+})
+//End search header
