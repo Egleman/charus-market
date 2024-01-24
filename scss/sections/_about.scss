@@ -1,0 +1,308 @@
+.about {
+    padding-bottom: 40px;
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        &:not(:last-of-type) {
+            margin-bottom: 60px;
+        }
+        &_small {
+            margin-bottom: 30px !important;
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        &_top {
+            margin-bottom: 15px;
+        }
+    }
+    &__text {
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        &_relative {
+            position: relative;
+            max-width: 422px;
+            width: 100%;
+        }
+        &-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+    &__accordion {
+        &-title {
+            color: #0086B3;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        &-content {
+            padding: 20px 0;
+        }
+    }
+    &__label {
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin-bottom: 20px;
+    }
+    &__address {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    &__time {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        &-wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        &-number {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            white-space: nowrap;
+        }
+        &-days {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            white-space: nowrap;
+        }
+    }
+    &__links {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        &-phone {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            color: #121212;
+        }
+        &-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &-map {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #0086B3;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__map {
+        height: 400px;
+    }
+    &__worktime {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        &-title {
+            margin-bottom: 10px;
+            font-size: 18px;
+            font-style: normal;
+            line-height: normal;
+        }
+        &-wrap {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 310px;
+            width: 100%;
+        }
+        &-day {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            .text {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                width: 87px;
+            }
+            .line {
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+        &-description {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+    }
+    &__list {
+        &-block {
+            padding-left: 10px;
+            box-sizing: border-box;
+            display: flex;
+            gap: 10px;
+        }
+    }
+    &__dot {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: flex;
+        flex-shrink: 0;
+        background: #000;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 1230px) {
+    .about {
+        &__grid {
+            gap: 20px;
+        }
+        &__address {
+            gap: 10px;
+        }
+        &__text {
+            &_relative {
+                max-width: 310px;
+            }
+        }
+        &__time {
+            &-number {
+                font-size: 16px;
+            }
+        }
+        &__links {
+            margin-bottom: 25px;
+            &-phone {
+                gap: 5px;
+                font-size: 16px;
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    display: flex;
+                    flex-shrink: 0;
+                }
+            }
+        }
+        &__worktime {
+            &-wrap {
+                max-width: 100%;
+            }
+        }
+        &__map {
+            height: 298px;
+        }
+    }
+}
+@media (max-width: 1022px) {
+    .about {
+        &__grid {
+            grid-template-columns: 1fr;
+            gap: 10px;
+            &:not(:last-of-type) {
+                margin-bottom: 40px;
+            }
+            &_small {
+                margin-bottom: 10px !important;
+            }
+            &_maps {
+                gap: 20px;
+            }
+        }
+    }
+}
+@media (max-width: 606px) {
+    .about {
+        .title {
+            font-size: 24px;
+        }
+        &__text {
+            font-size: 16px;
+            &_relative {
+                font-size: 18px;
+            }
+        }
+        &__label {
+            margin-bottom: 10px;
+        }
+    }
+}
+@media (max-width: 515px) {
+    .about {
+        &__links {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+            &-phone {
+                font-size: 20px;
+                gap: 7px;
+                svg {
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 475px) {
+    .about {
+        &__text {
+            &_relative {
+                max-width: 100%;
+            }
+        }
+        &__address {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        &__map {
+            height: 200px;
+        }
+    }
+}
+@media (max-width: 350px) {
+    .about {
+        &__worktime {
+            &-day {
+                gap: 15px;
+                .text, .line {
+                    font-size: 16px;
+                }
+            }
+            &-description {
+                font-size: 16px;
+            }
+        }
+    }
+}

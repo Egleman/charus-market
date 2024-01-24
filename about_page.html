@@ -151,6 +151,32 @@
         </div>
     </header>
     <main>
+        <section class="breadcrumbs">
+            <div class="container">
+                <nav class="breadcrumbs__nav">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__list-item">
+                            <a href="#" class="breadcrumbs__list-link">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.5">
+                                    <path d="M7.9987 2C7.9987 2 3.8747 5.56 1.57003 7.488C1.4347 7.61067 1.33203 7.78933 1.33203 8C1.33203 8.36867 1.63003 8.66667 1.9987 8.66667H3.33203V13.3333C3.33203 13.702 3.63003 14 3.9987 14H5.9987C6.36736 14 6.66536 13.7013 6.66536 13.3333V10.6667H9.33203V13.3333C9.33203 13.7013 9.63003 14 9.9987 14H11.9987C12.3674 14 12.6654 13.702 12.6654 13.3333V8.66667H13.9987C14.3674 8.66667 14.6654 8.36867 14.6654 8C14.6654 7.78933 14.5627 7.61067 14.41 7.488C12.1214 5.56 7.9987 2 7.9987 2Z" fill="black"/>
+                                    </g>
+                                </svg>
+                                Главная
+                            </a>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <div class="breadcrumbs__list-line"></div>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <a href="#" class="breadcrumbs__list-link breadcrumbs__list-link_disabled">
+                                О компании
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
         <section class="about">
             <div class="container">
                 <div class="about__grid">
@@ -158,7 +184,7 @@
                         <h1 class="big-title about__title">О компании</h1>
                     </div>
                     <div class="col col-2">
-                        <div class="about__info">
+                        <div class="about__info about__info_top">
                             <p class="about__text">
                                 Компания <b>«Чарус»</b> является официальным дилером группы компаний <b>GEBERIT</b> с 1
                                 995 года и имеет большой опыт по продаже и обслуживанию сантехнических и 
@@ -203,15 +229,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="about__grid about__grid-small">
+                <div class="about__grid about__grid_small">
                     <h2 class="title">Контакты</h2>
                 </div>
-                <div class="about__grid">
+                <div class="about__grid about__grid_maps">
                     <div class="col col-1">
                         <div class="about__label">Центральный офис в г. Москва</div>
                         <div class="about__address">
-                            <p class="about__text">
+                            <p class="about__text about__text_relative">
                                 г.Москва, Алтуфьевское шоссе, дом 48, корпус 2, 2 этаж, офис 205
+                                <a href="#" class="about__text-btn">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.592 2.06066L13.0865 0.439344C12.8253 0.158039 12.471 2.08024e-06 12.1016 0L7.10714 0C6.33788 0 5.71429 0.671562 5.71429 1.5V3H3.39286C2.62359 3 2 3.67156 2 4.5V14.5C2 15.3284 2.62359 16 3.39286 16H9.89286C10.6621 16 11.2857 15.3284 11.2857 14.5V13H13.6071C14.3764 13 15 12.3284 15 11.5V3.12131C15 2.72349 14.8532 2.34196 14.592 2.06066ZM9.71875 14.5H3.56696C3.52079 14.5 3.4765 14.4802 3.44385 14.4451C3.4112 14.4099 3.39286 14.3622 3.39286 14.3125V4.6875C3.39286 4.63777 3.4112 4.59008 3.44385 4.55492C3.4765 4.51975 3.52079 4.5 3.56696 4.5H5.71429V11.5C5.71429 12.3284 6.33788 13 7.10714 13H9.89286V14.3125C9.89286 14.3622 9.87451 14.4099 9.84186 14.4451C9.80921 14.4802 9.76493 14.5 9.71875 14.5ZM13.433 11.5H7.28125C7.23507 11.5 7.19079 11.4802 7.15814 11.4451C7.12549 11.4099 7.10714 11.3622 7.10714 11.3125V1.6875C7.10714 1.63777 7.12549 1.59008 7.15814 1.55492C7.19079 1.51975 7.23507 1.5 7.28125 1.5H10.3571V4.25C10.3571 4.66422 10.6689 5 11.0536 5H13.6071V11.3125C13.6071 11.3622 13.5888 11.4099 13.5561 11.4451C13.5235 11.4802 13.4792 11.5 13.433 11.5ZM13.6071 3.5H11.75V1.5H12.0295C12.0757 1.5 12.1199 1.51975 12.1526 1.55491L13.5562 3.06641C13.5723 3.08382 13.5851 3.10449 13.5939 3.12724C13.6026 3.14999 13.6071 3.17438 13.6071 3.199V3.5Z" fill="black"/>
+                                    </svg>
+                                </a>                                    
                             </p>
                             <div class="about__time">
                                 <div class="about__time-wrap">
@@ -225,7 +256,7 @@
                             </div>
                         </div>
                         <div class="about__links">
-                            <a href="tel:74957219109" class="about__link-phone">
+                            <a href="tel:74957219109" class="about__links-phone">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_79_1544)">
                                     <path d="M8.82667 14.3867C10.7467 18.16 13.84 21.24 17.6133 23.1733L20.5467 20.24C20.9067 19.88 21.44 19.76 21.9067 19.92C23.4 20.4133 25.0133 20.68 26.6667 20.68C27.4 20.68 28 21.28 28 22.0133V26.6667C28 27.4 27.4 28 26.6667 28C14.1467 28 4 17.8533 4 5.33333C4 4.6 4.6 4 5.33333 4H10C10.7333 4 11.3333 4.6 11.3333 5.33333C11.3333 7 11.6 8.6 12.0933 10.0933C12.24 10.56 12.1333 11.08 11.76 11.4533L8.82667 14.3867Z" fill="#121212"/>
@@ -349,14 +380,19 @@
                             </div>
                         </div>
                         <div class="about__map">
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A22be97ac9f5d0cc14c7933ee431d407f6fc27e8e41630a44805fe135c2c77905&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A22be97ac9f5d0cc14c7933ee431d407f6fc27e8e41630a44805fe135c2c77905&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=false"></script>
                         </div>
                     </div>
                     <div class="col col-2">
                         <div class="about__label">Склад в г. Москва</div>
                         <div class="about__address">
-                            <p class="about__text">
+                            <p class="about__text about__text_relative">
                                 городской округ Мытищи, посёлок Вёшки, ул. Заводская, д.24а
+                                <a href="#" class="about__text-btn">
+                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M14.592 2.06066L13.0865 0.439344C12.8253 0.158039 12.471 2.08024e-06 12.1016 0L7.10714 0C6.33788 0 5.71429 0.671562 5.71429 1.5V3H3.39286C2.62359 3 2 3.67156 2 4.5V14.5C2 15.3284 2.62359 16 3.39286 16H9.89286C10.6621 16 11.2857 15.3284 11.2857 14.5V13H13.6071C14.3764 13 15 12.3284 15 11.5V3.12131C15 2.72349 14.8532 2.34196 14.592 2.06066ZM9.71875 14.5H3.56696C3.52079 14.5 3.4765 14.4802 3.44385 14.4451C3.4112 14.4099 3.39286 14.3622 3.39286 14.3125V4.6875C3.39286 4.63777 3.4112 4.59008 3.44385 4.55492C3.4765 4.51975 3.52079 4.5 3.56696 4.5H5.71429V11.5C5.71429 12.3284 6.33788 13 7.10714 13H9.89286V14.3125C9.89286 14.3622 9.87451 14.4099 9.84186 14.4451C9.80921 14.4802 9.76493 14.5 9.71875 14.5ZM13.433 11.5H7.28125C7.23507 11.5 7.19079 11.4802 7.15814 11.4451C7.12549 11.4099 7.10714 11.3622 7.10714 11.3125V1.6875C7.10714 1.63777 7.12549 1.59008 7.15814 1.55492C7.19079 1.51975 7.23507 1.5 7.28125 1.5H10.3571V4.25C10.3571 4.66422 10.6689 5 11.0536 5H13.6071V11.3125C13.6071 11.3622 13.5888 11.4099 13.5561 11.4451C13.5235 11.4802 13.4792 11.5 13.433 11.5ZM13.6071 3.5H11.75V1.5H12.0295C12.0757 1.5 12.1199 1.51975 12.1526 1.55491L13.5562 3.06641C13.5723 3.08382 13.5851 3.10449 13.5939 3.12724C13.6026 3.14999 13.6071 3.17438 13.6071 3.199V3.5Z" fill="black"/>
+                                    </svg>
+                                </a>
                             </p>
                             <div class="about__time">
                                 <div class="about__time-wrap">
@@ -370,7 +406,7 @@
                             </div>
                         </div>
                         <div class="about__links">
-                            <a href="tel:74952346636" class="about__link-phone">
+                            <a href="tel:74952346636" class="about__links-phone">
                                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <g clip-path="url(#clip0_79_1544)">
                                     <path d="M8.82667 14.3867C10.7467 18.16 13.84 21.24 17.6133 23.1733L20.5467 20.24C20.9067 19.88 21.44 19.76 21.9067 19.92C23.4 20.4133 25.0133 20.68 26.6667 20.68C27.4 20.68 28 21.28 28 22.0133V26.6667C28 27.4 27.4 28 26.6667 28C14.1467 28 4 17.8533 4 5.33333C4 4.6 4.6 4 5.33333 4H10C10.7333 4 11.3333 4.6 11.3333 5.33333C11.3333 7 11.6 8.6 12.0933 10.0933C12.24 10.56 12.1333 11.08 11.76 11.4533L8.82667 14.3867Z" fill="#121212"/>
@@ -494,7 +530,7 @@
                             </div>
                         </div>
                         <div class="about__map">
-                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A22be97ac9f5d0cc14c7933ee431d407f6fc27e8e41630a44805fe135c2c77905&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=false"></script>
+                            <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A22be97ac9f5d0cc14c7933ee431d407f6fc27e8e41630a44805fe135c2c77905&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=false"></script>
                         </div>
                     </div>
                 </div>
@@ -530,6 +566,79 @@
                                 <b>БИК:</b> 044525411
                             </p>
                         </div>
+                    </div>
+                </div>
+                <div class="about__grid">
+                    <div class="col col-1">
+                        <div class="title">Новогодние праздники</div>
+                    </div>
+                    <div class="col col-2">
+                        <div class="about__worktime-title"><b>График работы</b></div>
+                        <ul class="about__worktime">
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">01.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Выходной</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">02.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Выходной</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">03.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Укороченный день</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">04.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Рабочий день</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">05.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Выходной</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">06.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Выходной</p>
+                                </div>
+                            </li>
+                            <li class="about__worktime-item">
+                                <div class="about__worktime-wrap">
+                                    <div class="about__worktime-day">
+                                        <p class="text">07.01.2024</p>
+                                        <div class="line">—</div>
+                                    </div>
+                                    <p class="about__worktime-description">Выходной</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
