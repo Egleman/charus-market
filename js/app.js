@@ -109,11 +109,20 @@ const productsCategories = new Swiper('.swiper-categories', {
         },
     }
 })
+const modalCartSlider = new Swiper('.modal-cart-swiper', {
+    spaceBetween: 10,
+    slidesPerView: 'auto',
+    freeMode: true,
+    navigation: {
+        nextEl: '.modal-cart__slider-button.next',
+        prevEl: '.modal-cart__slider-button.prev',
+    },
+})
 //End sliders
 
 //Start Card products
 const cardProductsBtn = document.querySelectorAll('[data-button="card-product"]');
-const cardProductsCounters = document.querySelectorAll('.product-card__counter');
+const cardProductsCounters = document.querySelectorAll('[data-block="card-product"]');
 cardProductsBtn.forEach((btn, index) => {
     btn.addEventListener('click', () => {
         btn.style.display = 'none';
@@ -564,3 +573,17 @@ searchModalInput.addEventListener('input', (e) => {
     }
 })
 //End search header
+
+//Start masked inputs
+const phoneInputs = document.querySelectorAll('[data-input="masked"]');
+const im = new Inputmask({
+    mask: '(+7|8) (999) 999-99-99',
+    showMaskOnHover: false,
+    showMaskOnFocus: false,
+    jitMasking: true,
+    inputmode: 'tel'
+})
+phoneInputs.forEach(input => {
+    im.mask(input);
+})
+//End masked inputs

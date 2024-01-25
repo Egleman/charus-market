@@ -98,9 +98,11 @@
         text-transform: uppercase;
         color: #fff;
         font-family: 'Brutal Type', sans-serif;
+        padding-top: 3px;
         // min-width: 80px;
         &_green {
             background: #2DCB6F;
+            padding-top: 0;
             p {
                 font-size: 12px;
                 font-style: normal;
