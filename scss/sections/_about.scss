@@ -18,6 +18,9 @@
         &_top {
             margin-bottom: 15px;
         }
+        &_hidden {
+            display: none;
+        }
     }
     &__text {
         font-size: 18px;
@@ -36,6 +39,10 @@
             position: absolute;
             bottom: 0;
             right: 0;
+        }
+        span {
+            font-size: 22px;
+            font-weight: 500;
         }
     }
     &__accordion {
@@ -242,6 +249,7 @@
 }
 @media (max-width: 606px) {
     .about {
+        padding-bottom: 20px;
         .title {
             font-size: 24px;
         }

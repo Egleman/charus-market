@@ -174,6 +174,10 @@
     justify-content: center;
     background: rgba(18, 18, 18, .5);
     z-index: 13;
+    &_padding {
+        padding: 15px;
+        box-sizing: border-box;
+    }
 }
 .overlay.active {
     display: flex;
@@ -275,6 +279,8 @@
     border: 1px solid rgba(18, 18, 18, 0.10);
     background: #FFF;
     box-shadow: 0px 10px 20px 0px rgba(18, 18, 18, 0.20);
+    max-height: 100%;
+    overflow-y: auto;
     &__close {
         display: flex;
         align-items: center;
@@ -310,6 +316,10 @@
     &__product {
         display: flex;
         gap: 20px;
+        position: relative;
+        &-body {
+            padding-top: 10px;
+        }
         &-img {
             max-width: 118px;
             width: 100%;
@@ -365,6 +375,22 @@
                 height: 40px;
             }
         }
+        &-label {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 500px 0 0 500px;
+            background: #034576;
+            padding: 5px 10px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            color: #fff;
+            &_red {
+                background: #D82828;
+            }
+        }
     }
     &__links {
         display: flex;
@@ -403,7 +429,12 @@
         }
     }
     &__sliders {
-        padding: 20px 30px 30px 30px;
+        &_top {
+            padding: 20px 30px 0 30px;
+        }
+        &_bottom {
+            padding: 20px 30px 30px 30px;
+        }
     }
     &__slider {
         display: flex;
@@ -505,6 +536,35 @@
         }
     }
 }
+@media (max-width: 720px) {
+    .modal-cart {
+        &__body {
+            flex-direction: column;
+            gap: 20px;
+        }
+        &__links {
+            &-link {
+                width: 100%;
+            }
+        }
+        &__sliders {
+            &_top {
+                padding: 20px 0 0 30px;
+            }
+            &_bottom {
+                padding: 20px 0 30px 30px;
+            }
+        }
+        &__slider {
+            &-button {
+                display: none;
+            }
+            .slider {
+                width: 100%;
+            }
+        }
+    }
+}
 @media (max-width: 606px) {
     .mobile-menu.active {
         left: 0;
@@ -515,6 +575,9 @@
     .overlay {
         &_bottom {
             align-items: flex-end;
+        }
+        &_padding {
+            padding: 15px 0;
         }
     }
     .modal-dialog {
@@ -534,6 +597,43 @@
         }
         &__form {
             margin-bottom: 10px;
+        }
+    }
+    .modal-cart {
+        &__title {
+            padding: 20px;
+            margin-bottom: 20px;
+            &_reset {
+                padding: 0;
+                margin-bottom: 10px;
+            }
+        }
+        &__body {
+            padding: 0 20px 20px 20px;
+        }
+        &__product {
+            flex-direction: column;
+            gap: 10px;
+            padding-top: 30px;
+            &-img {
+                margin: 0 auto;
+            }
+            &-body {
+                padding-top: 0;
+            }
+        }
+        &__sliders {
+            &_top {
+                padding: 20px 0 0 20px;
+            }
+            &_bottom {
+                padding: 20px 0 20px 20px;
+            }
+        }
+        &__slider {
+            &-slide {
+                max-width: 280px;
+            }
         }
     }
 }

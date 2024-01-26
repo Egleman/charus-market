@@ -61,6 +61,21 @@ b {
   font-weight: 700;
 }
 
+.wrapper {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+footer {
+  margin-top: auto;
+}
+
 .container {
   max-width: 1330px;
   width: 100%;
@@ -665,6 +680,11 @@ b {
   background: rgba(18, 18, 18, 0.5);
   z-index: 13;
 }
+.overlay_padding {
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
 .overlay.active {
   display: -webkit-box;
@@ -798,6 +818,8 @@ b {
   background: #FFF;
   -webkit-box-shadow: 0px 10px 20px 0px rgba(18, 18, 18, 0.2);
           box-shadow: 0px 10px 20px 0px rgba(18, 18, 18, 0.2);
+  max-height: 100%;
+  overflow-y: auto;
 }
 .modal-cart__close {
   display: -webkit-box;
@@ -852,6 +874,10 @@ b {
   display: -ms-flexbox;
   display: flex;
   gap: 20px;
+  position: relative;
+}
+.modal-cart__product-body {
+  padding-top: 10px;
 }
 .modal-cart__product-img {
   max-width: 118px;
@@ -913,6 +939,22 @@ b {
 .modal-cart__product-counter .counter {
   height: 40px;
 }
+.modal-cart__product-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 500px 0 0 500px;
+  background: #034576;
+  padding: 5px 10px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #fff;
+}
+.modal-cart__product-label_red {
+  background: #D82828;
+}
 .modal-cart__links {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -960,7 +1002,10 @@ b {
   font-weight: 400;
   line-height: normal;
 }
-.modal-cart__sliders {
+.modal-cart__sliders_top {
+  padding: 20px 30px 0 30px;
+}
+.modal-cart__sliders_bottom {
   padding: 20px 30px 30px 30px;
 }
 .modal-cart__slider {
@@ -1089,6 +1134,30 @@ b {
     gap: 10px;
   }
 }
+@media (max-width: 720px) {
+  .modal-cart__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+  .modal-cart__links-link {
+    width: 100%;
+  }
+  .modal-cart__sliders_top {
+    padding: 20px 0 0 30px;
+  }
+  .modal-cart__sliders_bottom {
+    padding: 20px 0 30px 30px;
+  }
+  .modal-cart__slider-button {
+    display: none;
+  }
+  .modal-cart__slider .slider {
+    width: 100%;
+  }
+}
 @media (max-width: 606px) {
   .mobile-menu.active {
     left: 0;
@@ -1099,6 +1168,9 @@ b {
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
+  }
+  .overlay_padding {
+    padding: 15px 0;
   }
   .modal-dialog {
     border-radius: 20px 20px 0 0;
@@ -1117,6 +1189,40 @@ b {
   }
   .modal-dialog__form {
     margin-bottom: 10px;
+  }
+  .modal-cart__title {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  .modal-cart__title_reset {
+    padding: 0;
+    margin-bottom: 10px;
+  }
+  .modal-cart__body {
+    padding: 0 20px 20px 20px;
+  }
+  .modal-cart__product {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 10px;
+    padding-top: 30px;
+  }
+  .modal-cart__product-img {
+    margin: 0 auto;
+  }
+  .modal-cart__product-body {
+    padding-top: 0;
+  }
+  .modal-cart__sliders_top {
+    padding: 20px 0 0 20px;
+  }
+  .modal-cart__sliders_bottom {
+    padding: 20px 0 20px 20px;
+  }
+  .modal-cart__slider-slide {
+    max-width: 280px;
   }
 }
 .accordion__item:not(.accordion__item_show) .accordion__body {
@@ -2323,6 +2429,7 @@ b {
 .hero {
   padding: 40px 0;
   background: #F8F8F8;
+  overflow: hidden;
 }
 .hero__wrapper {
   background: #fff;
@@ -3341,6 +3448,9 @@ b {
   }
 }
 @media (max-width: 606px) {
+  .footer {
+    padding: 20px 0 20px 0;
+  }
   .footer__list-link {
     font-size: 16px;
   }
@@ -3766,6 +3876,9 @@ b {
 .about__info_top {
   margin-bottom: 15px;
 }
+.about__info_hidden {
+  display: none;
+}
 .about__text {
   font-size: 18px;
   font-style: normal;
@@ -3790,6 +3903,10 @@ b {
   position: absolute;
   bottom: 0;
   right: 0;
+}
+.about__text span {
+  font-size: 22px;
+  font-weight: 500;
 }
 .about__accordion-title {
   color: #0086B3;
@@ -4039,6 +4156,9 @@ b {
   }
 }
 @media (max-width: 606px) {
+  .about {
+    padding-bottom: 20px;
+  }
   .about .title {
     font-size: 24px;
   }

@@ -109,14 +109,19 @@ const productsCategories = new Swiper('.swiper-categories', {
         },
     }
 })
-const modalCartSlider = new Swiper('.modal-cart-swiper', {
-    spaceBetween: 10,
-    slidesPerView: 'auto',
-    freeMode: true,
-    navigation: {
-        nextEl: '.modal-cart__slider-button.next',
-        prevEl: '.modal-cart__slider-button.prev',
-    },
+const modalCartSliders = document.querySelectorAll('.modal-cart-swiper');
+const modalCartSliderButtonsNext = document.querySelectorAll('.modal-cart__slider-button.next')
+const modalCartSliderButtonsPrev = document.querySelectorAll('.modal-cart__slider-button.prev')
+modalCartSliders.forEach((slider, index) => {
+    new Swiper(slider, {
+        spaceBetween: 10,
+        slidesPerView: 'auto',
+        freeMode: true,
+        navigation: {
+            nextEl: modalCartSliderButtonsNext[index],
+            prevEl: modalCartSliderButtonsPrev[index],
+        },
+    })
 })
 //End sliders
 
@@ -336,6 +341,11 @@ const catalogTabContents = document.querySelectorAll('.catalog__content');
 catalogButton.addEventListener('click', () => {
     catalogButton.classList.toggle('active');
     catalog.classList.toggle('active');
+    if (catalogButton.classList.contains('active')) {
+        blockBody();
+    } else {
+        unBlockBody();
+    }
 })
 
 catalogTabPanel.addEventListener('click', (e) => {
@@ -377,6 +387,7 @@ backButtonsCatalog.forEach((btn, index) => {
 })
 closeButtonsCatalog.forEach((btn, index) => {
     btn.addEventListener('click', () => {
+        unBlockBody();
         catalogTabContents.forEach((content, i) => {
             if (content.classList.contains('mobile-active')) {
                 content.classList.remove('mobile-active');
@@ -508,6 +519,7 @@ const filterCloseBtn = document.querySelector('[data-button="close-filter"]');
 if (filterOpenBtn) {
     filterOpenBtn.addEventListener('click', (e) => {
         e.preventDefault();
+        blockBody();
         filterBlock.classList.toggle('active');
     })
 }
@@ -515,6 +527,7 @@ if (filterCloseBtn) {
     filterCloseBtn.addEventListener('click', (e) => {
         e.preventDefault();
         filterBlock.classList.toggle('active');
+        unBlockBody();
     })
 }
 
@@ -535,10 +548,12 @@ const searchModalResultBlock = document.querySelector('.search__result');
 mobileSearchButtonHeader.addEventListener('click', (e) => {
     e.preventDefault();
     mobileSearchModal.classList.toggle('active');
+    blockBody()
 })
 closeModalSearchButton.addEventListener('click', (e) => {
     e.preventDefault();
     mobileSearchModal.classList.toggle('active');
+    unBlockBody()
 })
 searchHeaderInput.addEventListener('input', (e) => {
     if (e.target.value.length !== 0) {
@@ -587,3 +602,15 @@ phoneInputs.forEach(input => {
     im.mask(input);
 })
 //End masked inputs
+
+//Start buyers hidden blocks
+const buyerLinks = document.querySelectorAll('[data-link="buyer"]');
+const buyerHiddenBlocks = document.querySelectorAll('[data-block="buyer"]');
+buyerLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+        e.preventDefault();
+        buyerHiddenBlocks[index].classList.remove('about__info_hidden');
+        link.style.display = 'none';
+    })
+})
+//End buyers hidden blocks

@@ -25,7 +25,6 @@ body {
     position: relative;
     color: #121212;
     min-width: 303px;
-    // overflow-x: hidden;
 }
 
 ol, ul { 
@@ -38,5 +37,12 @@ label, button {
 b {
     font-weight: 700;
 }
-
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer {
+    margin-top: auto;
+}
 @import './imports';
