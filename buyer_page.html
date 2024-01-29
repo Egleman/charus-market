@@ -127,7 +127,7 @@
                                         </a>
                                     </li>
                                     <li class="header__list-item"><a href="#"
-                                            class="header__list-link hover-link">Покупателю</a></li>
+                                            class="header__list-link hover-link active">Покупателю</a></li>
                                     <li class="header__list-item"><a href="#" class="header__list-link hover-link">О
                                             компании</a></li>
                                     <li class="header__list-item"><a href="#" class="header__list-link hover-link">Для
@@ -701,6 +701,32 @@
                 <p>© 2014-2023 Магазин cантехники ЧарусМаркет</p>
             </div>
         </footer>
+    </div>
+    <div class="overlay overlay_bottom" id="error-modal">
+        <div class="modal-dialog">
+            <div class="modal-dialog__title">
+                Сообщить об ошибке
+                <button class="modal-dialog__close" toggle="#error-modal">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.25">
+                        <path d="M6.10156 6.10046L25.9006 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M25.8984 6.10046L6.09945 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>                    
+                </button>
+            </div>
+            <div class="modal-dialog__subtitle">Укажите проблему, с которой столкнулись</div>
+            <form action="#" class="modal-dialog__form">
+                <input type="text" placeholder="Меня зовут.." class="inputt modal-dialog__input" name="name">
+                <input type="text" placeholder="Мой номер телефона или почта" class="inputt modal-dialog__input modal-dialog__input_supervisor" name="phone">
+                <textarea placeholder="Комментарий" name="comment" class="inputt modal-dialog__input modal-dialog__input_comment"></textarea>
+                <button type="submit" class="modal-dialog__button hover-light-blue-button">Отправить</button>
+            </form>
+            <p class="modal-dialog__policy">
+                Нажимая кнопку «Отправить», я подтверждаю свое согласие на обработку персональных данных
+                в соответствии с указанным <a href="#">здесь</a> текстом.
+            </p>
+        </div>
     </div>
     <div class="overlay overlay_bottom" id="callback">
         <div class="modal-dialog">

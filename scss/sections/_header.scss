@@ -232,6 +232,10 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+            color: #121212;
+        }
+        &-link.active {
+            color: #0086B3;
         }
     }
     &__phone {

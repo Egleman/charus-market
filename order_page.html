@@ -151,376 +151,146 @@
         </div>
     </header>
     <main>
-        <section class="search-result">
+        <section class="breadcrumbs">
             <div class="container">
-                <h1 class="big-title search-result__title">Результаты поиска</h1>
-                <div class="products__categories">
-                    <div class="swiper swiper-categories">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
+                <nav class="breadcrumbs__nav">
+                    <ul class="breadcrumbs__list">
+                        <li class="breadcrumbs__list-item">
+                            <a href="#" class="breadcrumbs__list-link">
+                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <g opacity="0.5">
+                                    <path d="M7.9987 2C7.9987 2 3.8747 5.56 1.57003 7.488C1.4347 7.61067 1.33203 7.78933 1.33203 8C1.33203 8.36867 1.63003 8.66667 1.9987 8.66667H3.33203V13.3333C3.33203 13.702 3.63003 14 3.9987 14H5.9987C6.36736 14 6.66536 13.7013 6.66536 13.3333V10.6667H9.33203V13.3333C9.33203 13.7013 9.63003 14 9.9987 14H11.9987C12.3674 14 12.6654 13.702 12.6654 13.3333V8.66667H13.9987C14.3674 8.66667 14.6654 8.36867 14.6654 8C14.6654 7.78933 14.5627 7.61067 14.41 7.488C12.1214 5.56 7.9987 2 7.9987 2Z" fill="black"/>
+                                    </g>
+                                </svg>
+                                Главная
+                            </a>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <div class="breadcrumbs__list-line"></div>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <a href="#" class="breadcrumbs__list-link">
+                                Корзина
+                            </a>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <div class="breadcrumbs__list-line"></div>
+                        </li>
+                        <li class="breadcrumbs__list-item">
+                            <a href="#" class="breadcrumbs__list-link breadcrumbs__list-link_disabled">
+                                Оформление заказа
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+        <section class="order">
+            <div class="container">
+                <div class="order__grid">
+                    <div class="col col-1">
+                        <h1 class="big-title order__title">Оформление заказа</h1>
+                        <h2 class="title order__subtitle">Заполните данные ниже</h2>
+                        <form action="#" class="order__form">
+                            <div class="select order__form-human-type">
+                                <div class="select__value">
+                                    <p class="value">Физическое лицо</p>
+                                    <svg class="icon" width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.26172 5L9.76172 9L14.2617 5" stroke="#0086B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </div>
+                                <ul class="select__list" data-block="order-content-panel">
+                                    <li class="select__list-item">
+                                        <input type="radio" name="human-type" id="human-type-1" checked value="Физическое лицо">
+                                        <label for="human-type-1">
+                                            Физическое лицо
+                                        </label>
+                                    </li>
+                                    <li class="select__list-item">
+                                        <input type="radio" name="human-type" id="human-type-2" value="Юридическое лицо">
+                                        <label for="human-type-2">
+                                            Юридическое лицо
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
+                            <div class="filter__toggle order__form-toggle">
+                                <p>Вы хотите забрать самовывозом?</p>
+                                <input type="checkbox" value="delivery" name="delivery" id="delivery">
+                                <label for="delivery">
+                                    <div class="toggler"></div>
+                                </label>
+                            </div>
+                            <div class="order__address">
+                                Московская область, городской округ Мытищи, посёлок Вёшки, ул. Заводская, д.24а (въезд ОАО «Вешки»)
+                            </div>
+                            <div class="order__form-content active">
+                                <input type="text" placeholder="Мое ФИО" name="name" class="inputt">
+                                <input type="text" placeholder="Мой номер телефона" data-input="masked" name="phone" class="inputt">
+                                <input type="text" placeholder="Электронная почта" name="mail" class="inputt">
+                                <textarea placeholder="Адрес доставки" name="address" class="inputt order__form-textarea"></textarea>
+                                <textarea placeholder="Комментарий" name="comment" class="inputt order__form-textarea"></textarea>
+                            </div>
+                            <div class="order__form-content">
+                                <input type="text" placeholder="ИНН" name="inn" class="inputt">
+                                <input type="text" placeholder="КПП" name="kpp" class="inputt">
+                                <input type="text" placeholder="Название компании" name="company-name" class="inputt">
+                                <input type="text" placeholder="Юридический адрес" name="jurasic-address" class="inputt">
+                                <input type="text" placeholder="Контакное лицо" name="manager" class="inputt">
+                                <input type="text" placeholder="Номер телефона" data-input="masked" name="compnay-phone" class="inputt">
+                                <textarea placeholder="Адрес доставки" name="company-address" class="inputt order__form-textarea"></textarea>
+                                <textarea placeholder="Комментарий" name="company-comment" class="inputt order__form-textarea"></textarea>
+                            </div>
+                            <div class="order__form-price">Общая стоимость: 25 740 ₽</div>
+                            <div class="select order__form-pay-type">
+                                <div class="select__value">
+                                    <p class="value">Оплата наличными</p>
+                                    <svg class="icon" width="19" height="14" viewBox="0 0 19 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5.26172 5L9.76172 9L14.2617 5" stroke="#0086B3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
                                 </div>
+                                <ul class="select__list">
+                                    <li class="select__list-item">
+                                        <input type="radio" name="pay-type" id="pay-type-1" checked value="Оплата наличными">
+                                        <label for="pay-type-1">
+                                            Оплата наличными
+                                        </label>
+                                    </li>
+                                    <li class="select__list-item">
+                                        <input type="radio" name="pay-type" id="pay-type-2" value="Оплата по карте">
+                                        <label for="pay-type-2">
+                                            Оплата по карте
+                                        </label>
+                                    </li>
+                                </ul>
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
-                                </div>
+                            <button type="submit" class="order__form-button">Оформить заказ</button>
+                            <div class="order__form-policy">
+                                Нажимая кнопку «Оформить заказ», я подтверждаю свое согласие на обработку персональных данных
+                                в соответствии с указанным <a href="#">здесь</a> текстом.
                             </div>
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="products__categories-slide">
-                                    <div class="products__categories-name">Унитазы</div>
-                                    <div class="products__categories-img">
-                                        <img src="./img/products/product-2.png" alt="category-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-                </div>
-                <div class="search-result__grid">
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
+                    <div class="col col-2">
+                        <div class="order__small-title">Важная информация</div>
+                        <div class="order__info">
+                            <p class="order__text">
+                                Самовывоз<br>
+                                (Московская область, городской округ Мытищи, посёлок Вёшки, ул. Заводская, д.24а (въезд ОАО «Вешки»))
+                            </p>
+                            <p class="order__text">
+                                Доставка курьером в пределах МКАД (+500 ₽)<br>
+                                (Доставка заказа по Москве от 10000 рублей в пределах МКАД до подъезда бесплатно)
+                            </p>
+                            <p class="order__text">
+                                Доставка курьером за МКАД<br>
+                                (стоимость доставки будет уточнена менеджером)
+                            </p>
+                            <p class="order__text">
+                                Для регионов<br>
+                                (доставка до транспортной компании +500 ₽)
+                            </p>
                         </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                    <div class="search-result__card">
-                        <div class="search-result__card-img">
-                            <img src="./img/products/product-3.png" alt="product-image">
-                        </div>
-                        <div class="search-result__card-body">
-                            <div class="search-result__card-price">
-                                <p class="new">12 340 ₽</p>
-                                <p class="old">15 340 ₽</p>
-                            </div>
-                            <div class="search-result__card-description">
-                                Комплект: Инсталляция для подвесного унитаза CHARUS CC.300.80.01, 
-                                Клавиша хром глянцевый FP.310.21.01, подвесной унитаз EWC700-114W
-                            </div>
-                            <div class="search-result__card-article">Артикул: 23120421491</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="products__pagination">
-                    <button class="products__show-more">Показать ещё</button>
-                    <div class="pagination">
-                        <a href="#" class="pagination__button prev disabled">
-                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6.86718 0.278417L0.780148 6.32784C0.406617 6.69906 0.406617 7.30094 0.780148 7.67216L6.86718 13.7216C7.24071 14.0928 7.84632 14.0928 8.21985 13.7216C8.59338 13.3504 8.59338 12.7485 8.21985 12.3773L2.88801 7.07836C2.89013 7.05252 2.89121 7.02639 2.89121 7C2.89121 6.97361 2.89013 6.94748 2.88801 6.92164L8.21985 1.62273C8.59338 1.25151 8.59338 0.64964 8.21985 0.278417C7.84632 -0.0928057 7.24071 -0.0928057 6.86718 0.278417Z" fill="white"/>
-                            </svg>                                    
-                        </a>
-                        <ul class="pagination__list">
-                            <li class="pagination__list-item"><a href="#" class="pagination__list-link active">1</a></li>
-                            <li class="pagination__list-item"><a href="#" class="pagination__list-link">2</a></li>
-                            <li class="pagination__list-item hidden@xs"><a href="#" class="pagination__list-link">3</a></li>
-                            <li class="pagination__list-item hidden@s"><a href="#" class="pagination__list-link">4</a></li>
-                            <li class="pagination__list-item hidden@s"><a href="#" class="pagination__list-link">5</a></li>
-                            <li class="pagination__list-item hidden@s"><a href="#" class="pagination__list-link">6</a></li>
-                            <li class="pagination__list-item"><span class="pagination__list-dots">...</span></li>
-                            <li class="pagination__list-item"><a href="#" class="pagination__list-link">150</a></li>
-                        </ul>
-                        <a href="#" class="pagination__button next">
-                            <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M2.13282 0.278417L8.21985 6.32784C8.59338 6.69906 8.59338 7.30094 8.21985 7.67216L2.13282 13.7216C1.75929 14.0928 1.15368 14.0928 0.780148 13.7216C0.406617 13.3504 0.406617 12.7485 0.780148 12.3773L6.11199 7.07836C6.10987 7.05252 6.10879 7.02639 6.10879 7C6.10879 6.97361 6.10987 6.94748 6.11199 6.92164L0.780148 1.62273C0.406617 1.25151 0.406617 0.64964 0.780148 0.278417C1.15368 -0.0928057 1.75929 -0.0928057 2.13282 0.278417Z" fill="white"/>
-                            </svg>                                                                     
-                        </a>
                     </div>
                 </div>
             </div>
@@ -3704,7 +3474,6 @@
     </div>
     <script src="./js/swiper-bundle.min.js"></script>
     <script src="./js/minibar.min.js"></script>
-    <script src="./js/nouislider.min.js"></script>
     <script src="./js/inputmask.min.js"></script>
     <script src="./js/app.js"></script>
 </body>
