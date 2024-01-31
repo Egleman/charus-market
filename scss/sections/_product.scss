@@ -20,6 +20,9 @@
                 width: 100%;
             }
         }
+        &:not(:last-of-type) {
+            margin-bottom: 40px;
+        }
     }
     &__slider {
         display: flex;
@@ -277,6 +280,79 @@
     }
     &__toggle {
         margin-bottom: 0 !important; 
+    }
+    &__block {
+        &:not(:last-of-type) {
+            margin-bottom: 40px;
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &-title {
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 20px;
+        }
+        &-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        &-text {
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            white-space: nowrap;
+            &_link {
+                color: #0086B3;
+                text-align: right;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+            }
+        }
+        &-line {
+            width: 100%;
+            min-width: 15px;
+            height: 2px;
+            background: #EFF2F6;
+        }
+    }
+    &__buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: #FFF;
+            font-family: "Brutal Type", sans-serif;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            height: 67px;
+            max-width: 520px;
+            width: 100%;
+            border-radius: 500px 20px 20px 500px;
+            &_1 {
+                background: url("../img/icons/product-page-ico-1.svg") center/cover no-repeat;
+            }
+            &_2 {
+                background: url("../img/icons/product-page-ico-2.svg") center/cover no-repeat;
+            }
+            &_3 {
+                background: url("../img/icons/product-page-ico-3.svg") center/cover no-repeat;
+            }
+        }
     }
 }
 @media (max-width: 1330px) {

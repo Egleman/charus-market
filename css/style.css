@@ -5115,6 +5115,9 @@ footer {
   max-width: 520px;
   width: 100%;
 }
+.product__wrapper:not(:last-of-type) {
+  margin-bottom: 40px;
+}
 .product__slider {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5440,6 +5443,97 @@ footer {
 }
 .product__toggle {
   margin-bottom: 0 !important;
+}
+.product__block:not(:last-of-type) {
+  margin-bottom: 40px;
+}
+.product__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.product__list-title {
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-bottom: 20px;
+}
+.product__list-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+.product__list-text {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+.product__list-text_link {
+  color: #0086B3;
+  text-align: right;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.product__list-line {
+  width: 100%;
+  min-width: 15px;
+  height: 2px;
+  background: #EFF2F6;
+}
+.product__buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 10px;
+}
+.product__buttons-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px;
+  color: #FFF;
+  font-family: "Brutal Type", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  height: 67px;
+  max-width: 520px;
+  width: 100%;
+  border-radius: 500px 20px 20px 500px;
+}
+.product__buttons-link_1 {
+  background: url("../img/icons/product-page-ico-1.svg") center/cover no-repeat;
+}
+.product__buttons-link_2 {
+  background: url("../img/icons/product-page-ico-2.svg") center/cover no-repeat;
+}
+.product__buttons-link_3 {
+  background: url("../img/icons/product-page-ico-3.svg") center/cover no-repeat;
 }
 
 @media (max-width: 1330px) {
