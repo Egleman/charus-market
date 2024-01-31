@@ -109,6 +109,24 @@ const productsCategories = new Swiper('.swiper-categories', {
         },
     }
 })
+const productThumbs = new Swiper('.product__thumbs', {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+    direction: "vertical",
+})
+const productPageSlider = new Swiper('.product__main', {
+    spaceBetween: 0,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.product__slider-button.next',
+        prevEl: '.product__slider-button.prev',
+    },
+    thumbs: {
+        swiper: productThumbs,
+    },
+})
 const modalCartSliders = document.querySelectorAll('.modal-cart-swiper');
 const modalCartSliderButtonsNext = document.querySelectorAll('.modal-cart__slider-button.next')
 const modalCartSliderButtonsPrev = document.querySelectorAll('.modal-cart__slider-button.prev')
@@ -633,7 +651,6 @@ buyerLinks.forEach((link, index) => {
 const orderDeliveryInput = document.querySelector('.order__form-toggle > input');
 const orderAddress = document.querySelector('.order__address');
 const orderTabsPanel = document.querySelector('[data-block="order-content-panel"]');
-// const orderTabsLinks = orderTabsPanel.querySelectorAll('label');
 const orderFormContent = document.querySelectorAll('.order__form-content');
 if (orderDeliveryInput) {
     orderDeliveryInput.addEventListener('change', (e) => {
@@ -662,4 +679,4 @@ if (orderTabsPanel) {
         }
     })
 }
-//End ordero page-form
+//End order page-form

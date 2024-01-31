@@ -149,9 +149,9 @@
             height: 40px;
             border-radius: 4px;
             background: #EFF2F6;
-            overflow: hidden;
             width: 101px;
             flex-shrink: 0;
+            position: relative;
             span {
                 display: flex;
                 align-items: center;
@@ -163,6 +163,23 @@
                 line-height: normal;
             }
         }
+        &-clue {
+            position: absolute;
+            left: 118px;
+            bottom: 17px;
+            border-radius: 4px;
+            border: 1px solid rgba(18, 18, 18, 0.10);
+            background: #FFF;
+            box-shadow: 0px 5px 20px 0px rgba(18, 18, 18, 0.20);
+            padding: 15px 30px;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            white-space: nowrap;
+            display: none;
+            z-index: 13;
+        }
         &-button {
             display: flex;
             align-items: center;
@@ -171,7 +188,19 @@
             padding: 0 10px;
             border: none;
             height: 100%;
+            border-radius: 4px;
         }
+        &-button.disabled {
+            svg {
+                path {
+                    fill: rgba(18, 18, 18, 0.2);
+                }
+            }
+            &:hover + .cart__card-clue {
+                display: block;
+            }
+        }
+
         &-block {
             width: 24px;
             display: flex;
@@ -376,6 +405,11 @@
                 right: 0;
                 height: 24px;
             }
+            &-button.disabled {
+                &:hover + .cart__card-clue {
+                    display: none;
+                }
+            }
         }
     }
 }
@@ -407,9 +441,14 @@
         }
         &__form {
             &-title {
+                margin-bottom: 10px;
+                gap: 10px;
                 .cart__card-label {
                     display: block;
                     position: static;
+                }
+                p {
+                    margin-bottom: 0;
                 }
             }
         }
@@ -436,6 +475,14 @@
             &-calc {
                 width: 100%;
             }
+            &-price {
+                .new {
+                    font-size: 24px;
+                }
+                .old {
+                    font-size: 18px;
+                }
+            }
         }
         &__card {
             &-price {
@@ -448,9 +495,14 @@
             }
             &-description {
                 font-size: 14px;
+                -webkit-line-clamp: 2;
             }
             &-color {
                 font-size: 14px;
+                -webkit-line-clamp: 2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
             }
             &-article {
                 font-size: 14px;
@@ -458,6 +510,15 @@
             &-counter {
                 height: 32px;
                 width: 133px;
+            }
+        }
+    }
+}
+@media (max-width: 360px) {
+    .cart {
+        &__form {
+            &-send {
+                font-size: 16px;
             }
         }
     }

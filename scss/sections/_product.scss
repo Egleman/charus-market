@@ -1,0 +1,92 @@
+.product {
+    &__article {
+        margin-bottom: 20px;
+    }
+    &__subtitle {
+        margin-bottom: 15px;
+        max-width: 740px;
+        width: 100%;
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 520px;
+        gap: 30px;
+    }
+    &__slider {
+        display: flex;
+        gap: 10px;
+        &-thumbs {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 101px;
+            max-width: 101px;
+            width: 100%;
+        }
+        &-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            flex-shrink: 0;
+            padding: 0;
+            border: none;
+            background: #034576;
+            position: relative;
+            z-index: 13;
+        }
+        &-button.prev {
+            padding-bottom: 1px;
+            margin-bottom: -16px;
+        }
+        &-button.next {
+            padding-top: 1px;
+            margin-top: -16px;
+        }
+        &-button.swiper-button-disabled {
+            background: rgba(3, 69, 118, 0.2) !important;
+        }
+    }
+    &__thumbs {
+        max-height: 362px;
+        height: 100%;
+        .swiper-slide {
+            height: max-content !important;
+        }
+        &-slide {
+            max-width: 101px;
+            width: 100%;
+            height: 83px;
+        }
+        &-img {
+            border-radius: 10px;
+            border: 1px solid transparent;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: flex;
+            box-sizing: border-box;
+        }
+        .swiper-slide-thumb-active {
+            .product__thumbs-img {
+                border: 1px solid #034576;
+            }
+        }
+    }
+    &__main {
+        max-width: 629px;
+        width: 100%;
+        &-slide {
+            max-width: 629px;
+            width: 100%;
+            height: 362px;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
