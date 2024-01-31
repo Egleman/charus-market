@@ -115,10 +115,26 @@ const productThumbs = new Swiper('.product__thumbs', {
     freeMode: true,
     watchSlidesProgress: true,
     direction: "vertical",
+    breakpoints: {
+        0: {
+            slidesPerView: 'auto', 
+            direction: "horizontal",
+        },
+        606: {
+            slidesPerView: 'auto',
+            direction: "horizontal",
+        },
+        1022: {
+            direction: "vertical",
+            slidesPerView: 4,
+        }
+    }
 })
 const productPageSlider = new Swiper('.product__main', {
     spaceBetween: 0,
     slidesPerView: 1,
+    observer: true,
+    observeParents: true,
     navigation: {
         nextEl: '.product__slider-button.next',
         prevEl: '.product__slider-button.prev',
