@@ -519,6 +519,69 @@
         }
     }
 }
+.modal-gallery {
+    max-width: 1290px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(18, 18, 18, 0.1);
+    border-radius: 20px;
+    box-shadow: 0px 10px 20px 0px rgba(18, 18, 18, 0.2);
+    background: rgb(255, 255, 255);
+    &__title {
+        padding: 30px 30px 20px 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 25px;
+        letter-spacing: 0%;
+        text-align: left;
+        border-bottom: 2px solid rgb(242, 242, 242);
+    }
+    &__body {
+        padding: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+    }
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 64px;
+        height: 64px;
+        flex-shrink: 0;
+        background: rgb(3, 69, 118);
+        border: none;
+        padding: 0;
+        border-radius: 50%;
+    }
+    &__button.prev {
+        padding-right: 3px;
+    }
+    &__button.next {
+        padding-left: 3px;
+    }
+    &__button.swiper-button-disabled {
+        background: rgba(3, 69, 118, .2) !important;
+    }
+    &__slide {
+        max-width: 1070px;
+        width: 100%;
+        height: 579px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    &__swiper {
+        max-width: 1070px;
+        width: 100%;
+    }
+}
 @media (max-width: 1230px) {
     .cookies {
         &__wrapper {
@@ -533,6 +596,19 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 10px;
+        }
+    }
+    .modal-gallery {
+        &__slide {
+            height: 350px;
+        }
+        &__button {
+            width: 32px;
+            height: 32px;
+            svg {
+                width: 8px;
+                height: 14px;
+            }
         }
     }
 }
@@ -634,6 +710,14 @@
             &-slide {
                 max-width: 280px;
             }
+        }
+    }
+    .modal-gallery {
+        &__title {
+            padding: 20px;
+        }
+        &__body {
+            padding: 0 20px;
         }
     }
 }

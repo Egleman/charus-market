@@ -693,6 +693,52 @@
             <p>© 2014-2023 Магазин cантехники ЧарусМаркет</p>
         </div>
     </footer>
+    <div class="overlay overlay_padding" id="gallery">
+        <div class="modal-gallery">
+            <div class="modal-gallery__title">
+                Фотографии товара
+                <button class="modal-cart__close" toggle="#gallery">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.25">
+                        <path d="M6.10156 6.10046L25.9006 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M25.8984 6.10046L6.09945 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>                    
+                </button>
+            </div>
+            <div class="modal-gallery__body">
+                <button class="modal-gallery__button prev">
+                    <svg width="16.000000" height="28.000000" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector 3 (Stroke)" d="M12.7344 0.556641L0.560547 12.6558C-0.1875 13.3979 -0.1875 14.6021 0.560547 15.3442L12.7344 27.4434C13.4805 28.1855 14.6934 28.1855 15.4395 27.4434C16.1875 26.7007 16.1875 25.4971 15.4395 24.7544L4.77539 14.1567C4.7793 14.105 4.7832 14.0527 4.7832 14C4.7832 13.9473 4.7793 13.895 4.77539 13.8433L15.4395 3.24561C16.1875 2.50293 16.1875 1.29932 15.4395 0.556641C14.6934 -0.185547 13.4805 -0.185547 12.7344 0.556641Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+                    </svg>                    
+                </button>
+                <div class="swiper modal-gallery__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="modal-gallery__slide"><img src="./img/products/product-13.png" alt="product-image"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="modal-gallery__slide"><img src="./img/products/product-14.png" alt="product-image"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="modal-gallery__slide"><img src="./img/products/product-15.png" alt="product-image"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="modal-gallery__slide"><img src="./img/products/product-13.png" alt="product-image"></div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="modal-gallery__slide"><img src="./img/products/product-14.png" alt="product-image"></div>
+                        </div>
+                    </div>
+                </div>
+                <button class="modal-gallery__button next">
+                    <svg width="16.000000" height="28.000000" viewBox="0 0 16 28" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <path id="Vector 3 (Stroke)" d="M3.26562 0.556641L15.4395 12.6558C16.1875 13.3979 16.1875 14.6021 15.4395 15.3442L3.26562 27.4434C2.51953 28.1855 1.30664 28.1855 0.560547 27.4434C-0.1875 26.7007 -0.1875 25.4971 0.560547 24.7544L11.2246 14.1567C11.2207 14.105 11.2168 14.0527 11.2168 14C11.2168 13.9473 11.2207 13.895 11.2246 13.8433L0.560547 3.24561C-0.1875 2.50293 -0.1875 1.29932 0.560547 0.556641C1.30664 -0.185547 2.51953 -0.185547 3.26562 0.556641Z" fill="#FFFFFF" fill-opacity="1.000000" fill-rule="evenodd"/>
+                    </svg>          
+                </button>
+            </div>
+        </div>
+    </div>
     <div class="overlay overlay_bottom" id="error-modal">
         <div class="modal-dialog">
             <div class="modal-dialog__title">
@@ -1148,6 +1194,31 @@
                     </button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="overlay overlay_bottom" id="observer">
+        <div class="modal-dialog">
+            <div class="modal-dialog__title">
+                Отслеживание товара
+                <button class="modal-dialog__close" toggle="#observer">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g opacity="0.25">
+                        <path d="M6.10156 6.10046L25.9006 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M25.8984 6.10046L6.09945 25.8995" stroke="#121212" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+                    </svg>                    
+                </button>
+            </div>
+            <div class="modal-dialog__subtitle">Укажите ваше имя и телефон, как только товар появится, мы обязательно отправим письмо</div>
+            <form action="#" class="modal-dialog__form">
+                <input type="text" placeholder="Меня зовут.." class="inputt modal-dialog__input" name="name">
+                <input type="text" placeholder="Электронная почта" class="inputt modal-dialog__input" name="email">
+                <button type="submit" class="modal-dialog__button hover-light-blue-button">Сообщите о поступлении</button>
+            </form>
+            <p class="modal-dialog__policy">
+                Нажимая кнопку «Сообщите о поступлении», я подтверждаю свое согласие на обработку персональных данных
+                в соответствии с указанным <a href="#">здесь</a> текстом.
+            </p>
         </div>
     </div>
     <div class="mobile-menu" id="mobile-menu">

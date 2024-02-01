@@ -34,11 +34,11 @@ const categorySlider = new Swiper('.category__swiper', {
             slidesPerView: 4,
         },
         1022: {
-            spaceBetween: 13, 
+            spaceBetween: 13,
             slidesPerView: 5,
         },
         1230: {
-            spaceBetween: 18, 
+            spaceBetween: 18,
         }
     }
 });
@@ -78,7 +78,7 @@ const brandsSwiper = new Swiper('.brands__swiper', {
             slidesPerView: 'auto',
         },
         1230: {
-            spaceBetween: 18, 
+            spaceBetween: 18,
             slidesPerView: 4,
         },
     }
@@ -117,7 +117,7 @@ const productThumbs = new Swiper('.product__thumbs', {
     direction: "vertical",
     breakpoints: {
         0: {
-            slidesPerView: 'auto', 
+            slidesPerView: 'auto',
             direction: "horizontal",
         },
         606: {
@@ -143,6 +143,26 @@ const productPageSlider = new Swiper('.product__main', {
         swiper: productThumbs,
     },
 })
+const productModalSlides = document.querySelectorAll('.product__main-slide > a');
+const productModalSlider = new Swiper('.modal-gallery__swiper', {
+    speed: 500,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    navigation: {
+        nextEl: '.modal-gallery__button.next',
+        prevEl: '.modal-gallery__button.prev',
+    },
+})
+if (productModalSlides) {
+    productModalSlides.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            productModalSlider.slideTo(+link.dataset.modalSlide)
+        })
+    })
+}
+
+
 const modalCartSliders = document.querySelectorAll('.modal-cart-swiper');
 const modalCartSliderButtonsNext = document.querySelectorAll('.modal-cart__slider-button.next')
 const modalCartSliderButtonsPrev = document.querySelectorAll('.modal-cart__slider-button.prev')
@@ -171,9 +191,9 @@ cardProductsBtn.forEach((btn, index) => {
 //End Card products
 
 //Start counters
-const buttonsPlus =  document.querySelectorAll('[data-button="plus"]');
-const buttonsMinus =  document.querySelectorAll('[data-button="minus"]');
-const countDisplays =  document.querySelectorAll('[data-block="count"]');
+const buttonsPlus = document.querySelectorAll('[data-button="plus"]');
+const buttonsMinus = document.querySelectorAll('[data-button="minus"]');
+const countDisplays = document.querySelectorAll('[data-block="count"]');
 
 buttonsPlus.forEach((btn, index) => {
     btn.addEventListener('click', () => {
@@ -533,15 +553,15 @@ rangeSliderFilters.forEach((slider, index) => {
         );
     })
     rangeInputsFrom[index].addEventListener('change', () => {
-        if (+rangeInputsFrom[index].value.replace(/\D/g,'') > 0 && +rangeInputsFrom[index].value.replace(/\D/g,'') < +slider.dataset.max) {
-            slider.noUiSlider.set(+rangeInputsFrom[index].value.replace(/\D/g,''));
+        if (+rangeInputsFrom[index].value.replace(/\D/g, '') > 0 && +rangeInputsFrom[index].value.replace(/\D/g, '') < +slider.dataset.max) {
+            slider.noUiSlider.set(+rangeInputsFrom[index].value.replace(/\D/g, ''));
         } else {
             slider.noUiSlider.set(+slider.dataset.max);
         }
     })
     rangeInputsUpTo[index].addEventListener('change', () => {
-        if (+rangeInputsUpTo[index].value.replace(/\D/g,'') > 0 && +rangeInputsUpTo[index].value.replace(/\D/g,'') < +slider.dataset.max) {
-            slider.noUiSlider.set(+rangeInputsUpTo[index].value.replace(/\D/g,''));
+        if (+rangeInputsUpTo[index].value.replace(/\D/g, '') > 0 && +rangeInputsUpTo[index].value.replace(/\D/g, '') < +slider.dataset.max) {
+            slider.noUiSlider.set(+rangeInputsUpTo[index].value.replace(/\D/g, ''));
         } else {
             slider.noUiSlider.set(+slider.dataset.max);
         }
@@ -696,3 +716,30 @@ if (orderTabsPanel) {
     })
 }
 //End order page-form
+
+// Start scroll-links
+const scrollLinks = document.querySelectorAll('[scroll]');
+if (scrollLinks) {
+    scrollLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const blockId = link.getAttribute('href');
+            document.querySelector(blockId).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        })
+    })
+}
+// End scroll-links
+
+//Start product documents
+const documentLink = document.querySelector('[data-link="documents"]');
+const documentBlock = document.querySelector('.product__documents');
+if (documentLink) {
+    documentLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        documentBlock.classList.add('active');
+    })
+}
+//End product documents
