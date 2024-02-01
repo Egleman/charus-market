@@ -316,6 +316,9 @@
                 font-weight: 400;
                 line-height: normal;
             }
+            &_right {
+                text-align: right;
+            }
         }
         &-line {
             width: 100%;
@@ -359,12 +362,18 @@
     .product {
         &__slider {
             &-main {
-                max-width: 550px;
+                max-width: 500px;
             }
         }
         &__main {
             &-slide {
-                max-width: 550px;
+                max-width: 500px;
+            }
+        }
+        &__list {
+            &-text {
+                white-space: normal;
+                text-wrap: balance;
             }
         }
     }
@@ -381,10 +390,33 @@
                 max-width: 320px;
             }
         }
+        &__wrapper {
+            &_bottom {
+                flex-direction: column-reverse;
+            }
+            &-col {
+                &_buttons {
+                    margin-left: auto;
+                }
+            }
+        }
+        &__list {
+            &-text {
+                white-space: nowrap;
+                text-wrap: nowrap;
+            }
+        }
     }
 }
 @media (max-width: 1022px) {
     .product {
+        &__buttons {
+            align-items: flex-end;
+            &-item {
+                max-width: 520px;
+                width: 100%;
+            }
+        }
         &__wrapper {
             flex-direction: column;
             gap: 20px;
@@ -393,6 +425,12 @@
                     min-width: initial;
                     max-width: 100%;
                 }
+                &_buttons {
+                    margin-left: auto;
+                }
+            }
+            &_bottom {
+                flex-direction: column-reverse;
             }
         }
         &__slider {
@@ -435,6 +473,12 @@
         &__main {
             &-slide {
                 height: 262px;
+            }
+        }
+        &__list {
+            &-text {
+                white-space: normal;
+                text-wrap: balance;
             }
         }
     }
