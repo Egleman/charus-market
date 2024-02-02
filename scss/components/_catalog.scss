@@ -1,12 +1,14 @@
 .catalog {
-    position: fixed;
-    max-width: 1330px;
+    position: absolute;
+    // max-width: 1330px;
     width: 100%;
-    padding: 0 15px;
+    // padding: 0 15px;
     box-sizing: border-box;
-    top: 132px;
-    left: 50%;
-    transform: translate(-50%, 0);
+    // top: 132px;
+    top: 100%;
+    left: 0;
+    // left: 50%;
+    // transform: translate(-50%, 0);
     z-index: 12;
     display: none;
     .hidden\@l {
@@ -179,7 +181,7 @@
 }
 @media (max-width: 1230px) {
     .catalog {
-        max-width: 1022px;
+        // max-width: 1022px;
         a.hidden\@l {
             display: flex;
         }
@@ -201,8 +203,8 @@
 }
 @media (max-width: 1022px) {
     .catalog {
-        top: 112px;
-        max-width: 798px;
+        // top: 112px;
+        // max-width: 798px;
         &__accordion {
             &-link.hidden\@m {
                 display: flex;
@@ -219,6 +221,12 @@
         }
     }
 }
+// @media (max-width: 812px) {
+//     .catalog {
+//         max-width: 100%;
+//         padding: 0 15px !important;
+//     }
+// }
 @media (max-width: 606px) {
     .catalog {
         top: 0;
@@ -231,6 +239,7 @@
         height: 100%;
         background: #fff;
         flex-direction: column;
+        position: fixed;
         &__header {
             display: flex;
             margin-bottom: 10px;

@@ -491,6 +491,16 @@
                 text-wrap: nowrap;
             }
         }
+        &__info {
+            &-setup {
+                .block.hover-block {
+                    cursor:auto;
+                    &:hover + .product__table {
+                        display: none;
+                    }
+                }
+            }
+        }
     }
 }
 @media (max-width: 1022px) {
