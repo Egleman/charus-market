@@ -582,6 +582,15 @@
         width: 100%;
     }
 }
+.table-dialog {
+    position: relative;
+    &__close {
+        display: flex;
+        position: absolute;
+        left: 101%;
+        bottom: 101%;
+    }
+}
 @media (max-width: 1230px) {
     .cookies {
         &__wrapper {
@@ -646,8 +655,28 @@
         left: 0;
         // display: block;
     }
+    .table-dialog {
+        position: relative;
+        height: 90%;
+        overflow-y: auto;
+        &__close {
+            display: flex;
+            position: fixed;
+            left: initial;
+            right: 3px;
+            bottom: initial;
+            top: 3px;
+            z-index: 1;
+            svg {
+                path {
+                    stroke: #000;
+                }
+            }
+        }
+    }
 }
 @media (max-width: 475px) {
+    
     .overlay {
         &_bottom {
             align-items: flex-end;

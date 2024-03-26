@@ -984,6 +984,16 @@ footer {
   width: 100%;
 }
 
+.table-dialog {
+  position: relative;
+}
+.table-dialog__close {
+  display: flex;
+  position: absolute;
+  left: 101%;
+  bottom: 101%;
+}
+
 @media (max-width: 1230px) {
   .cookies__wrapper {
     gap: 55px;
@@ -1034,6 +1044,23 @@ footer {
 @media (max-width: 606px) {
   .mobile-menu.active {
     left: 0;
+  }
+  .table-dialog {
+    position: relative;
+    height: 90%;
+    overflow-y: auto;
+  }
+  .table-dialog__close {
+    display: flex;
+    position: fixed;
+    left: initial;
+    right: 3px;
+    bottom: initial;
+    top: 3px;
+    z-index: 1;
+  }
+  .table-dialog__close svg path {
+    stroke: #000;
   }
 }
 @media (max-width: 475px) {
@@ -1580,9 +1607,8 @@ footer {
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 32px;
   text-transform: uppercase;
-  padding-top: 3px;
   box-sizing: border-box;
   transition: 0.3s all;
 }
@@ -4692,11 +4718,16 @@ footer {
     white-space: nowrap;
     text-wrap: nowrap;
   }
-  .product__info-setup .block.hover-block {
-    cursor: auto;
+  .product__table {
+    width: 500px;
   }
-  .product__info-setup .block.hover-block:hover + .product__table {
-    display: none;
+  .product__table-row {
+    padding: 15px 30px;
+    display: grid;
+    grid-template-columns: 33px 120px 81px 80px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
   }
 }
 @media (max-width: 1022px) {
@@ -4750,6 +4781,20 @@ footer {
   }
   .product__info-button {
     max-width: 100%;
+  }
+  .product__info-setup .block.hover-block {
+    cursor: auto;
+  }
+  .product__info-setup .block.hover-block:hover + .product__table {
+    display: none;
+  }
+  .product__table {
+    width: 100%;
+  }
+  .product__table_modal {
+    display: block;
+    position: static;
+    transform: translate(0, 0);
   }
 }
 @media (max-width: 798px) {
@@ -4823,6 +4868,14 @@ footer {
     line-height: 17px;
     letter-spacing: 0%;
     text-align: left;
+  }
+  .product__table-row {
+    padding: 15px 10px;
+    display: grid;
+    grid-template-columns: 33px 120px 50px 80px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
   }
 }
 .success-order {

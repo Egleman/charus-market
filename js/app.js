@@ -716,3 +716,13 @@ if (documentLink) {
     })
 }
 //End product documents
+
+const hoverBlockProductPage = document.querySelector('.block.hover-block');
+if (hoverBlockProductPage) {
+    hoverBlockProductPage.addEventListener('click', () => {
+        if (window.innerWidth < 1022) {
+            document.querySelector('#product-table').classList.add('active');
+            blockBody();
+        }
+    })
+}
