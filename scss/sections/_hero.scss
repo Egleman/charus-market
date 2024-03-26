@@ -52,14 +52,14 @@
             color: #fff;
         }
         &-img {
-            max-width: 739px;
+            max-width: 100%;
             width: 100%;
             height: 428px;
             img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                border-radius: 500px 20px 20px 500px;
+                // border-radius: 500px 20px 20px 500px;
             }
         }
     }
@@ -124,16 +124,16 @@
         }
     }
 }
-@media (max-width: 1230px) {
-    .hero {
-        &__slide {
-            &-img {
-                max-width: 470px;
-                min-width: 470px;
-            }
-        }
-    }
-}
+// @media (max-width: 1230px) {
+//     .hero {
+//         &__slide {
+//             &-img {
+//                 max-width: 470px;
+//                 min-width: 470px;
+//             }
+//         }
+//     }
+// }
 @media (max-width: 1022px) {
     .hero {
         &__slide {
@@ -153,11 +153,11 @@
                 font-size: 16px;
                 width: 200px;
             }
-            &-img {
-                max-width: 400px;
-                min-width: initial;
-                height: 300px;
-            }
+            // &-img {
+            //     max-width: 400px;
+            //     min-width: initial;
+            //     height: 300px;
+            // }
         }
         &__button {
             width: 40px;
@@ -220,8 +220,8 @@
     .hero {
         padding: 20px 0;
         &__wrapper {
-            padding: 20px 20px 60px 20px;
-            border-radius: 20px;
+            // padding: 20px 20px 60px 20px;
+            // border-radius: 20px;
         }
         &__slide {
             flex-direction: column;
@@ -254,7 +254,7 @@
             }
             &-img {
                 max-width: 100%;
-                height: 200px;
+                height: 300px;
             }
         }
         &__button {
@@ -305,7 +305,7 @@
     .hero {
         &__slide {
             &-img {
-                height: 150px;
+                height: 250px;
             }
         }
     }
@@ -314,7 +314,7 @@
     .hero {
         &__slide {
             &-img {
-                height: 100px;
+                height: 200px;
             }
         }
     }

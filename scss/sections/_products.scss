@@ -65,7 +65,9 @@
         &-slide {
             // max-width: 190px;
             width: 100%;
-            height: 111px;
+            height: 130px;
+            padding: 10px;
+            box-sizing: border-box;
             flex-direction: column;
             display: flex;
             align-items: center;
@@ -79,6 +81,7 @@
             font-style: normal;
             font-weight: 500;
             line-height: normal;
+            text-align: center;
         }
         &-img {
             max-width: 172px;

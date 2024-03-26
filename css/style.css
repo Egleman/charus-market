@@ -2115,7 +2115,7 @@ footer {
   color: #fff;
 }
 .hero__slide-img {
-  max-width: 739px;
+  max-width: 100%;
   width: 100%;
   height: 428px;
 }
@@ -2124,7 +2124,6 @@ footer {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 500px 20px 20px 500px;
 }
 .hero__button {
   padding: 0;
@@ -2187,12 +2186,6 @@ footer {
   background: #034576;
 }
 
-@media (max-width: 1230px) {
-  .hero__slide-img {
-    max-width: 470px;
-    min-width: 470px;
-  }
-}
 @media (max-width: 1022px) {
   .hero__slide-left {
     padding: 15px 20px 15px 80px;
@@ -2209,11 +2202,6 @@ footer {
   .hero__slide-button {
     font-size: 16px;
     width: 200px;
-  }
-  .hero__slide-img {
-    max-width: 400px;
-    min-width: initial;
-    height: 300px;
   }
   .hero__button {
     width: 40px;
@@ -2263,10 +2251,6 @@ footer {
   .hero {
     padding: 20px 0;
   }
-  .hero__wrapper {
-    padding: 20px 20px 60px 20px;
-    border-radius: 20px;
-  }
   .hero__slide {
     flex-direction: column;
   }
@@ -2299,7 +2283,7 @@ footer {
   }
   .hero__slide-img {
     max-width: 100%;
-    height: 200px;
+    height: 300px;
   }
   .hero__button {
     width: 32px;
@@ -2347,12 +2331,12 @@ footer {
 }
 @media (max-width: 475px) {
   .hero__slide-img {
-    height: 150px;
+    height: 250px;
   }
 }
 @media (max-width: 375px) {
   .hero__slide-img {
-    height: 100px;
+    height: 200px;
   }
 }
 .category {
@@ -2993,7 +2977,9 @@ footer {
 }
 .products__categories-slide {
   width: 100%;
-  height: 111px;
+  height: 130px;
+  padding: 10px;
+  box-sizing: border-box;
   flex-direction: column;
   display: flex;
   align-items: center;
@@ -3007,6 +2993,7 @@ footer {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  text-align: center;
 }
 .products__categories-img {
   max-width: 172px;
@@ -4836,6 +4823,44 @@ footer {
     line-height: 17px;
     letter-spacing: 0%;
     text-align: left;
+  }
+}
+.success-order {
+  padding: 60px 0;
+}
+.success-order__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.success-order__title {
+  font-size: 30px;
+  font-style: normal;
+  line-height: normal;
+}
+.success-order__button {
+  border-radius: 8px;
+  background: #0086B3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 190px;
+  height: 55px;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  color: #FFF;
+  font-family: "Brutal Type", sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+@media (max-width: 606px) {
+  .success-order__title {
+    font-size: 22px;
   }
 }
 .hover-light-blue-button {
